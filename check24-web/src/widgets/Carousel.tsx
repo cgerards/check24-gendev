@@ -10,7 +10,7 @@ import { Pagination, Navigation } from "swiper/modules";
 
 export default function Carousel() {
   return (
-    <div className="px-30 py-10">
+    <div>
       <Swiper
         navigation={true}
         loop={true}
