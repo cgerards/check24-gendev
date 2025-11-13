@@ -17,6 +17,7 @@ export default function Carousel() {
         slidesPerView={4}
         spaceBetween={30}
         modules={[Pagination, Navigation]}
+        className="carouselswiper"
       >
         <SwiperSlide>
           <div className="bg-white rounded-lg shadow-md overflow-hidden">

@@ -48,4 +48,31 @@ body {
         display: block;
         width: 100%;
     }
+
+    
+
+    .heroswiper .swiper-button-next {
+        right: 35rem !important;
+        color: #fff !important;
+        opacity: 0.9;
+    }
+
+    .heroswiper .swiper-button-prev {
+        left: 35rem !important;
+        color: #fff !important;
+        opacity: 0.9;
+    }
+
+
+    .carouselswiper .swiper-button-next {
+        right: 1rem !important;
+        top: 6rem !important;
+        opacity: 0.9;
+    }
+
+    .carouselswiper .swiper-button-prev {
+        left: 1rem !important;
+        top: 6rem !important;
+        opacity: 0.9;
+    }
 }
