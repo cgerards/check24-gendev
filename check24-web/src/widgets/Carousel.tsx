@@ -1,34 +1,75 @@
 "use client";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-import { Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation } from "swiper/modules";
 
 export default function Carousel() {
   return (
-    <>
+    <div className="px-30 py-10">
       <Swiper
-        pagination={{
-          type: 'progressbar',
-        }}
         navigation={true}
+        loop={true}
+        slidesPerView={4}
+        spaceBetween={30}
         modules={[Pagination, Navigation]}
-        className="mySwiper"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        <SwiperSlide>
+          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="bg-gray-200 h-32 w-full" />{" "}
+            {/* Placeholder for an image */}
+            <div className="p-4">
+              <h3 className="text-lg font-bold">Slide 1</h3>
+              <p className="text-gray-600 mt-2">Card content goes here.</p>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="bg-gray-200 h-32 w-full" />{" "}
+            {/* Placeholder for an image */}
+            <div className="p-4">
+              <h3 className="text-lg font-bold">Slide 2</h3>
+              <p className="text-gray-600 mt-2">Card content goes here.</p>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="bg-gray-200 h-32 w-full" />{" "}
+            {/* Placeholder for an image */}
+            <div className="p-4">
+              <h3 className="text-lg font-bold">Slide 3</h3>
+              <p className="text-gray-600 mt-2">Card content goes here.</p>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="bg-gray-200 h-32 w-full" />{" "}
+            {/* Placeholder for an image */}
+            <div className="p-4">
+              <h3 className="text-lg font-bold">Slide 4</h3>
+              <p className="text-gray-600 mt-2">Card content goes here.</p>
+            </div>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <div className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="bg-gray-200 h-32 w-full" />{" "}
+            {/* Placeholder for an image */}
+            <div className="p-4">
+              <h3 className="text-lg font-bold">Slide 5</h3>
+              <p className="text-gray-600 mt-2">Card content goes here.</p>
+            </div>
+          </div>
+        </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 }

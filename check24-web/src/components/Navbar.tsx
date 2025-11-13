@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import mainLogo from "../../public/check24.svg";
 
-function BasicExample() {
+function CheckNavbar() {
   return (
     <nav className="bg-checkblue border-b pt-6">
       <div className="max-w-8xl mx-auto px-1 sm:px-2 lg:px-10">
@@ -59,4 +59,4 @@ function BasicExample() {
   );
 }
 
-export default BasicExample;
+export default CheckNavbar;
