@@ -4,6 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 import mainLogo from "../../public/check24.svg";
 
+import facebook from "../../public/facebook.svg"
+import instagram from "../../public/instagram.svg"
+import youtube from "../../public/youtube.svg"
+import tiktok from "../../public/tiktok.svg"
+
 function Footer() {
   return (
     <footer className="mx-auto p-4 bg-checkblue flex justify-center w-full">
@@ -18,10 +23,12 @@ function Footer() {
           </div>
 
           <div className="text-sm text-white font-semibold -mt-2">
-            <span className="text-sm">Deutschlands größtes Vergleichsportal</span>
+            <span className="text-sm">
+              Deutschlands größtes Vergleichsportal
+            </span>
           </div>
 
-          <div className="text-white p-2 flex justify-between text-center">
+          <div className="text-white p-2 flex justify-between text-center -ml-2 pr-20">
             <span className="text-sm hover:underline">AGB</span>
             <span className="text-sm">|</span>
             <span className="text-sm hover:underline">Datenschutz</span>
@@ -29,8 +36,27 @@ function Footer() {
             <span className="text-sm hover:underline">Impressum</span>
           </div>
 
-          <div className="outline-2 outline-dashed outline-gray-400 p-2 text-red-400">
-            <span className="text-sm">UNDER [socials]</span>
+          <div className="grid grid-cols-4 gap-2 w-50 -ml-2">
+            <span className="aspect-square text-sm flex justify-center items-start">
+              <Link href="#">
+                <Image className="w-8" src={facebook} alt="facebook"/>
+              </Link>
+            </span>
+            <span className="aspect-square text-sm flex justify-center items-start">
+              <Link href="#">
+                <Image className="w-8" src={instagram} alt="instagram" />
+              </Link>
+            </span>
+            <span className="aspect-square text-sm flex justify-center items-start">
+              <Link href="#">
+                <Image className="w-8" src={youtube} alt="youtube" />
+              </Link>
+            </span>
+            <span className="aspect-square text-sm flex justify-center items-start">
+              <Link href="#">
+                <Image className="w-8" src={tiktok} alt="tiktok" />
+              </Link>
+            </span>
           </div>
         </div>
 
@@ -55,7 +81,9 @@ function Footer() {
           <span className="text-sm font-bold pb-2">Unser Engagement</span>
           <span className="text-sm hover:underline">Nachhaltigkeit</span>
           <span className="text-sm hover:underline">CHECK24 hilft Kindern</span>
-          <span className="text-sm hover:underline">CHECK24 hilft der Natur</span>
+          <span className="text-sm hover:underline">
+            CHECK24 hilft der Natur
+          </span>
         </div>
 
         <div className="col-span-1 row-span-4 p-2 text-white flex flex-col gap-1">
