@@ -52,13 +52,13 @@ body {
     
 
     .heroswiper .swiper-button-next {
-        right: 35rem !important;
+        right: 25rem !important;
         color: #fff !important;
         opacity: 0.9;
     }
 
     .heroswiper .swiper-button-prev {
-        left: 35rem !important;
+        left: 25rem !important;
         color: #fff !important;
         opacity: 0.9;
     }
