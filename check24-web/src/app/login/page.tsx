@@ -1,18 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Cookies from "js-cookie";
 import MySwitch from "@/components/MySwitch";
 import MiniNavbar from "@/components/MiniNavbar";
 
 export default function Login() {
-  const [selectedUser, setSelectedUser] = useState(0);
+  const [selectedUser, setSelectedUser] = useState(() => {
+    const userCookie = Cookies.get("user");
+    return userCookie ? parseInt(userCookie, 10) : 0;
+  });
+
 
   const handleUserSelect = (userId: number) => {
     if (selectedUser === userId) {
       setSelectedUser(0);
+      Cookies.remove("user");
     } else {
       setSelectedUser(userId);
+      Cookies.set("user", userId.toString(), { path: "/" });
     }
+  };
+
+
+  const handleClear = () => {
+    setSelectedUser(0);
+    Cookies.remove("user");
   };
 
   return (
@@ -24,7 +37,7 @@ export default function Login() {
           <div className="flex items-center justify-between pb-5">
             <p className="font-bold underline">User selection</p>
             <button
-              onClick={() => setSelectedUser(0)}
+              onClick={handleClear}
               className="text-sm font-semibold text-checkblue hover:underline cursor-pointer"
             >
               Clear
