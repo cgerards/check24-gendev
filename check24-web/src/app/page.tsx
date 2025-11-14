@@ -18,7 +18,7 @@ export default function Home() {
         <div className="w-full max-w-7xl px-4">
           <Carousel />
         </div>
-        <div className="w-full max-w-5xl px-4">
+        <div className="w-full max-w-7xl px-4">
           <FeaturedGrid />
         </div>
 

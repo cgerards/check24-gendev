@@ -12,9 +12,9 @@ export default function FeaturedGrid() {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto p-4">
-      <div className="grid grid-cols-6 gap-3 p-3">
-        <div className="col-span-3 row-span-1 rounded-2xl aspect-video overflow-hidden relative">
+    <div className="max-w-7xl mx-auto p-1 outline-2">
+      <div className="grid grid-cols-6 gap-3 p-1">
+        <div className="col-span-3 row-span-1 rounded-2xl aspect-21/9 overflow-hidden relative">
           <Image
             src={placeholders[0]}
             alt=""
@@ -25,7 +25,7 @@ export default function FeaturedGrid() {
           <span className="rounded absolute top-0 left-0 m-3 px-2 py-1 text-sm bg-black/60 text-amber-50 font-bold">Argentinien</span>
         </div>
 
-        <div className="col-span-3 row-span-1 rounded-2xl aspect-video overflow-hidden">
+        <div className="col-span-3 row-span-1 rounded-2xl aspect-21/9 overflow-hidden">
           <Image
             src={placeholders[1]}
             alt=""
