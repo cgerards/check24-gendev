@@ -1,0 +1,6 @@
+[
+  { "id": 1, "name": "Alice", "hasCarInsurance": true },
+  { "id": 2, "name": "Bob", "hasCarInsurance": false },
+  { "id": 3, "name": "Charlie", "hasTravelBookings": true },
+  { "id": 4, "name": "Dana", "hasMobilePlan": true }
+]

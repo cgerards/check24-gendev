@@ -1,6 +1,7 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import Image from "next/image";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -30,47 +31,44 @@ export default function Hero() {
         className="heroswiper h-[55vh]"
       >
         <SwiperSlide>
-          <div className="bg-white shadow-md overflow-hidden">
-            <div className="bg-gray-200 w-full" />{" "}
-            <img
-              src={placeholders[0]}
-              alt=""
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <Image
+            src={placeholders[0]}
+            alt=""
+            width={1920}
+            height={500}
+            className="w-full h-full object-cover"
+            priority={true}
+          />
         </SwiperSlide>
 
         <SwiperSlide>
-          <div className="bg-white shadow-md overflow-hidden">
-            <div className="bg-gray-200 w-full" />{" "}
-            <img
-              src={placeholders[1]}
-              alt=""
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <Image
+            src={placeholders[1]}
+            alt=""
+            width={1920}
+            height={500}
+            className="w-full h-full object-cover"
+          />
         </SwiperSlide>
 
         <SwiperSlide>
-          <div className="bg-white shadow-md overflow-hidden">
-            <div className="bg-gray-200 w-full" />{" "}
-            <img
-              src={placeholders[2]}
-              alt=""
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <Image
+            src={placeholders[2]}
+            alt=""
+            width={1920}
+            height={500}
+            className="w-full h-full object-cover"
+          />
         </SwiperSlide>
 
         <SwiperSlide>
-          <div className="bg-white shadow-md overflow-hidden">
-            <div className="bg-gray-200 w-full" />{" "}
-            <img
-              src={placeholders[3]}
-              alt=""
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <Image
+            src={placeholders[3]}
+            alt=""
+            width={1920}
+            height={500}
+            className="w-full h-full object-cover"
+          />
         </SwiperSlide>
       </Swiper>
     </div>
