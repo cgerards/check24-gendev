@@ -17,8 +17,8 @@ export default function WidgetRenderer({ widget }: { widget: Widget }) {
     return null;
   }
 
-  // console.log("test")
-  // console.log(widget.data)
+  console.log("test")
+  console.log(widget.data)
 
   return <Component {...widget.data} />;
 }
