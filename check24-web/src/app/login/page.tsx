@@ -1,16 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Cookies from "js-cookie";
 import MySwitch from "@/components/MySwitch";
 import MiniNavbar from "@/components/MiniNavbar";
+
+import Tag from "@/components/Tag";
 
 export default function Login() {
   const [selectedUser, setSelectedUser] = useState(() => {
     const userCookie = Cookies.get("user");
     return userCookie ? parseInt(userCookie, 10) : 0;
   });
-
 
   const handleUserSelect = (userId: number) => {
     if (selectedUser === userId) {
@@ -21,7 +22,6 @@ export default function Login() {
       Cookies.set("user", userId.toString(), { path: "/" });
     }
   };
-
 
   const handleClear = () => {
     setSelectedUser(0);
@@ -46,9 +46,17 @@ export default function Login() {
 
           <div className="flex flex-col gap-1">
             <div className="flex items-center justify-between">
-              <label htmlFor="user-1" className="font-semibold text-gray-700">
-                User 1
-              </label>
+              <div className="flex items-center gap-2">
+                <label htmlFor="user-1" className="font-semibold text-gray-700">
+                  User 1
+                </label>
+                <div className="flex items-center gap-1">
+                  <Tag text="Testd" color="yellow" />
+                  <Tag text="Testd" color="yellow" />
+                  <Tag text="Testd" color="yellow" />
+                </div>
+              </div>
+
               <MySwitch
                 label=""
                 checked={selectedUser === 1}
@@ -56,10 +64,20 @@ export default function Login() {
               />
             </div>
 
+          
+
             <div className="flex items-center justify-between">
-              <label htmlFor="user-2" className="font-semibold text-gray-700">
-                User 2
-              </label>
+              <div className="flex items-center gap-2">
+                <label htmlFor="user-2" className="font-semibold text-gray-700">
+                  User 2
+                </label>
+                <div className="flex items-center gap-1">
+                  <Tag text="Car" color="red" />
+                  <Tag text="Testd" color="yellow" />
+                  <Tag text="Testd" color="yellow" />
+                </div>
+              </div>
+
               <MySwitch
                 label=""
                 checked={selectedUser === 2}
@@ -67,16 +85,6 @@ export default function Login() {
               />
             </div>
 
-            <div className="flex items-center justify-between">
-              <label htmlFor="user-3" className="font-semibold text-gray-700">
-                User 3
-              </label>
-              <MySwitch
-                label=""
-                checked={selectedUser === 3}
-                onChange={() => handleUserSelect(3)}
-              />
-            </div>
           </div>
         </div>
       </main>
