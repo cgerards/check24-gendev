@@ -20,7 +20,7 @@ function MiniNavbar() {
 
           <div className="hidden md:flex space-x-4">
             <Link
-              href="/contact"
+              href="/about"
               className="py-2 px-1 text-white hover:text-gray-400"
             >
               Contact
