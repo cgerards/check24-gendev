@@ -5,7 +5,15 @@ import FeaturedGrid from "@/widgets/FeaturedGrid";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+import WidgetRenderer from "@/widgets/WidgetRenderer";
+import { Widget } from "@/widgets/types";
+
+export default async function Home() {
+
+  const response = await fetch('http://127.0.0.1:8000/');
+  const data = (await response.json()) as {widgets: Widget[]}
+  console.log(data);
+
   return (
     <div className="flex flex-col min-h-screen w-full">
       <CheckNavbar />
@@ -17,6 +25,13 @@ export default function Home() {
         <div className="w-full max-w-7xl px-4">
           <FeaturedGrid />
         </div>
+
+      {data.widgets.map((widget, index) => (
+        <div key={index} className="w-full max-w-7xl px-4">
+            <WidgetRenderer widget={widget} />
+        </div>
+      ))}
+
       </main>
       <Footer />
     </div>
