@@ -32,7 +32,6 @@ body {
     width: 100%;
   }
 
-
   .swiper-slide img {
     display: block;
     width: 100%;
@@ -62,6 +61,22 @@ body {
     .heroswiper .swiper-button-prev {
       left: 25% !important;
     }
+
+    .carouselswiper .swiper-button-next {
+      right: 1rem !important;
+      top: 50% !important;
+      transform: translateY(-50%);
+      opacity: 0.9;
+      visibility: visible !important;
+    }
+
+    .carouselswiper .swiper-button-prev {
+      left: 1rem !important;
+      top: 50% !important;
+      transform: translateY(-50%);
+      opacity: 0.9;
+      visibility: visible !important;
+    }
   }
 
   .heroswiper .swiper-zoom-container > img {
@@ -76,16 +91,10 @@ body {
   }
 
   .carouselswiper .swiper-button-next {
-    right: 1rem !important;
-    top: 50% !important;
-    transform: translateY(-50%);
-    opacity: 0.9;
+    visibility: hidden;
   }
 
   .carouselswiper .swiper-button-prev {
-    left: 1rem !important;
-    top: 50% !important;
-    transform: translateY(-50%);
-    opacity: 0.9;
+    visibility: hidden;
   }
 }

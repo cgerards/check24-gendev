@@ -13,8 +13,8 @@ export default function FeaturedGrid() {
 
   return (
     <div className="max-w-7xl mx-auto p-1">
-      <div className="grid grid-cols-6 gap-3 p-1">
-        <div className="col-span-3 row-span-1 rounded-2xl aspect-21/9 overflow-hidden relative">
+      <div className="grid grid-cols-2 lg:grid-cols-6 gap-1 lg:gap-3 p-1">
+        <div className="col-span-1 row-span-3 lg:col-span-3 lg:row-span-1 rounded-2xl aspect-9/10 lg:aspect-21/9 overflow-hidden relative">
           <Image
             src={placeholders[0]}
             alt=""
@@ -22,10 +22,12 @@ export default function FeaturedGrid() {
             height={675}
             className="w-full h-full object-cover hover:scale-110 transition-all duration-500 ease-in-out"
           />
-          <span className="rounded absolute top-0 left-0 m-3 px-2 py-1 text-sm bg-black/60 text-amber-50 font-bold">Argentinien</span>
+          <span className="rounded absolute top-0 left-0 m-3 px-2 py-1 text-sm bg-black/60 text-amber-50 font-bold">
+            Argentinien
+          </span>
         </div>
 
-        <div className="col-span-3 row-span-1 rounded-2xl aspect-21/9 overflow-hidden">
+        <div className="col-span-1 row-span-3 lg:col-span-3 lg:row-span-1 rounded-2xl aspect-9/10 lg:aspect-21/9 overflow-hidden">
           <Image
             src={placeholders[1]}
             alt=""
@@ -35,7 +37,7 @@ export default function FeaturedGrid() {
           />
         </div>
 
-        <div className="col-span-2 row-span-1 rounded-2xl aspect-video overflow-hidden">
+        <div className="col-span-1 row-span-3 lg:col-span-2 lg:row-span-1 rounded-2xl aspect-9/10 lg:aspect-video overflow-hidden">
           <Image
             src={placeholders[2]}
             alt=""
@@ -45,7 +47,7 @@ export default function FeaturedGrid() {
           />
         </div>
 
-        <div className="col-span-2 row-span-1 rounded-2xl aspect-video overflow-hidden">
+        <div className="col-span-1 row-span-3 lg:col-span-2 lg:row-span-1 rounded-2xl aspect-9/10 lg:aspect-video overflow-hidden">
           <Image
             src={placeholders[3]}
             alt=""
@@ -55,7 +57,7 @@ export default function FeaturedGrid() {
           />
         </div>
 
-        <div className="col-span-2 row-span-1 rounded-2xl aspect-video overflow-hidden">
+        <div className="hidden lg:block col-span-2 row-span-1 rounded-2xl aspect-video overflow-hidden">
           <Image
             src={placeholders[4]}
             alt=""
