@@ -10,12 +10,12 @@ import { Pagination, Navigation } from "swiper/modules";
 
 export default function Carousel() {
   return (
-    <div>
       <Swiper
         navigation={true}
         loop={true}
         slidesPerView={4}
         spaceBetween={30}
+        autoHeight={true}
         modules={[Pagination, Navigation]}
         className="carouselswiper"
       >
@@ -71,6 +71,5 @@ export default function Carousel() {
           </div>
         </SwiperSlide>
       </Swiper>
-    </div>
   );
 }

@@ -8,7 +8,7 @@ import user from "../../public/user.svg";
 function MiniNavbar() {
   return (
     <nav className="bg-checkblue border-b pt-6">
-      <div className="max-w-8xl mx-auto px-1 sm:px-2 lg:px-10">
+      <div className="mx-auto px-1 sm:px-2 lg:px-10">
         <div className="flex justify-between h-12 items-start">
           <div className="flex items-center">
             <div className="container">

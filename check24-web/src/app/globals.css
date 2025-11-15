@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -29,50 +27,49 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
 @layer components {
-    .swiper {
-        width: 100%;
-        padding: 10px !important;
-    }
-
-    .swiper-slide {
-        background-position: center;
-        background-size: cover;
-        width: 300px;
-        height: 300px;
-    }
-
-    .swiper-slide img {
-        display: block;
-        width: 100%;
-    }
-
-    
-
-    .heroswiper .swiper-button-next {
-        right: 25rem !important;
-        color: #fff !important;
-        opacity: 0.9;
-    }
-
-    .heroswiper .swiper-button-prev {
-        left: 25rem !important;
-        color: #fff !important;
-        opacity: 0.9;
-    }
+  .swiper {
+    width: 100%;
+  }
 
 
-    .carouselswiper .swiper-button-next {
-        right: 1rem !important;
-        top: 6rem !important;
-        opacity: 0.9;
-    }
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+  }
 
-    .carouselswiper .swiper-button-prev {
-        left: 1rem !important;
-        top: 6rem !important;
-        opacity: 0.9;
-    }
+  .heroswiper .swiper-button-next {
+    right: 25rem !important;
+    color: #fff !important;
+    opacity: 0.9;
+  }
+
+  .heroswiper .swiper-button-prev {
+    left: 25rem !important;
+    color: #fff !important;
+    opacity: 0.9;
+  }
+
+  .heroswiper .swiper-zoom-container > img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+  .carouselswiper {
+    padding: 1rem !important;
+  }
+
+  .carouselswiper .swiper-button-next {
+    right: 1rem !important;
+    top: 6rem !important;
+    opacity: 0.9;
+  }
+
+  .carouselswiper .swiper-button-prev {
+    left: 1rem !important;
+    top: 6rem !important;
+    opacity: 0.9;
+  }
 }

@@ -18,7 +18,6 @@ const placeholders = [
 
 export default function Hero() {
   return (
-    <div className="-mx-8 -my-3">
       <Swiper
         navigation={true}
         autoplay={{
@@ -28,7 +27,7 @@ export default function Hero() {
         loop={true}
         slidesPerView={1}
         modules={[Autoplay, Pagination, Navigation]}
-        className="heroswiper h-[55vh]"
+        className="heroswiper h-[55vh] overflow-hidden"
       >
         <SwiperSlide>
           <Image
@@ -71,6 +70,5 @@ export default function Hero() {
           />
         </SwiperSlide>
       </Swiper>
-    </div>
   );
 }
