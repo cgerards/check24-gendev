@@ -38,22 +38,21 @@ export default function Login() {
             <p className="font-bold underline">User selection</p>
             <button
               onClick={handleClear}
-              className="text-sm font-semibold text-checkblue hover:underline cursor-pointer"
+              className="text-sm font-semibold text-checkblue hover:underline cursor-pointer pr-7"
             >
               Clear
             </button>
           </div>
 
+          {/* 1 - Alice */}
           <div className="flex flex-col gap-1">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <label htmlFor="user-1" className="font-semibold text-gray-700">
-                  User 1
+                  Alice
                 </label>
                 <div className="flex items-center gap-1">
-                  <Tag text="Testd" color="yellow" />
-                  <Tag text="Testd" color="yellow" />
-                  <Tag text="Testd" color="yellow" />
+                  <Tag text="car-insurance" color="red" />
                 </div>
               </div>
 
@@ -64,17 +63,14 @@ export default function Login() {
               />
             </div>
 
-          
-
+            {/* 2 - Bob */}
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <label htmlFor="user-2" className="font-semibold text-gray-700">
-                  User 2
+                  Bob
                 </label>
                 <div className="flex items-center gap-1">
-                  <Tag text="Car" color="red" />
-                  <Tag text="Testd" color="yellow" />
-                  <Tag text="Testd" color="yellow" />
+                  <Tag text="internet-contract" color="blue" />
                 </div>
               </div>
 
@@ -85,6 +81,84 @@ export default function Login() {
               />
             </div>
 
+            {/* 3 - Charlie */}
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <label htmlFor="user-3" className="font-semibold text-gray-700">
+                  Charlie
+                </label>
+                <div className="flex items-center gap-1">
+                  <Tag text="internet-contract" color="blue" />
+                  <Tag text="mobile-contract" color="blue" />
+                </div>
+              </div>
+
+              <MySwitch
+                label=""
+                checked={selectedUser === 3}
+                onChange={() => handleUserSelect(3)}
+              />
+            </div>
+
+            {/* 4 - Dave */}
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <label htmlFor="user-4" className="font-semibold text-gray-700">
+                  Dave
+                </label>
+                <div className="flex items-center gap-1">
+                  <Tag text="flight" color="yellow" />
+                  <Tag text="hotel" color="yellow" />
+                  <Tag text="internet-contract" color="blue" />
+                </div>
+              </div>
+
+              <MySwitch
+                label=""
+                checked={selectedUser === 4}
+                onChange={() => handleUserSelect(4)}
+              />
+            </div>
+
+            {/* 5 - Eve */}
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <label htmlFor="user-5" className="font-semibold text-gray-700">
+                  Eve
+                </label>
+                <div className="flex items-center gap-1">
+                  <Tag text="electricity" color="green" />
+                  <Tag text="home-insurance" color="red" />
+                </div>
+              </div>
+
+              <MySwitch
+                label=""
+                checked={selectedUser === 5}
+                onChange={() => handleUserSelect(5)}
+              />
+            </div>
+
+            {/* 6 - Frank */}
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <label htmlFor="user-5" className="font-semibold text-gray-700">
+                  Frank
+                </label>
+                <div className="flex items-center gap-1">
+                  <Tag text="electricity" color="green" />
+                  <Tag text="gas" color="green" />
+                </div>
+              </div>
+
+              <MySwitch
+                label=""
+                checked={selectedUser === 6}
+                onChange={() => handleUserSelect(6)}
+              />
+            </div>
+
+            {/* */}
           </div>
         </div>
       </main>

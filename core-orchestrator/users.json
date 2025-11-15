@@ -1,6 +1,10 @@
 [
-  { "id": 1, "name": "Alice", "hasCarInsurance": true },
-  { "id": 2, "name": "Bob", "hasCarInsurance": false },
-  { "id": 3, "name": "Charlie", "hasTravelBookings": true },
-  { "id": 4, "name": "Dana", "hasMobilePlan": true }
+  { "id": 1, "name": "Alice", "car-insurance": true},
+  { "id": 2, "name": "Bob", "internet-contract": true },
+  { "id": 3, "name": "Charlie", "mobile-contract": true, "internet-contract": true },
+  { "id": 4, "name": "Dave", "flight": "december", "hotel": "december", "rental-car": false, "internet-contract": true},
+  { "id": 5, "name": "Eve", "electricity": true, "home-insurance": true},
+  { "id": 6, "name": "Frank", "electricity": true, "gas": true},
+  { "id": 7, "name": "Grace"},
+  { "id": 8, "name": "Heidi"}
 ]
