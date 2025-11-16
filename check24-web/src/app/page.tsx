@@ -1,7 +1,7 @@
 import Image from "next/image";
 import CheckNavbar from "../components/Navbar";
 import Carousel from "../widgets/Carousel";
-import FeaturedGrid from "@/widgets/FeaturedGrid";
+import CarWidget from "@/widgets/CarWidget";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 
@@ -23,7 +23,7 @@ export default async function Home() {
           <Carousel />
         </div>
         <div className="w-full max-w-7xl px-4">
-          <FeaturedGrid />
+          <CarWidget />
         </div>
 
       {data.widgets.map((widget, index) => (

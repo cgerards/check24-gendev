@@ -29,7 +29,7 @@ export default function FeaturedGrid({ title, items} : FeaturedGridProps) {
     <div className="max-w-7xl mx-auto p-1">
       {title && <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-4">{title}</h2>}
       <div className="grid grid-cols-2 lg:grid-cols-6 gap-1 lg:gap-3 p-1">
-        <div className="col-span-1 row-span-3 lg:col-span-3 lg:row-span-1 rounded-2xl aspect-9/10 lg:aspect-21/9 overflow-hidden relative">
+        <div className="shadow-md col-span-1 row-span-3 lg:col-span-3 lg:row-span-1 rounded-2xl aspect-9/10 lg:aspect-21/9 overflow-hidden relative">
           
           <Image
             src={displayItems[0].src}
@@ -43,7 +43,7 @@ export default function FeaturedGrid({ title, items} : FeaturedGridProps) {
           </span>
         </div>
 
-        <div className="col-span-1 row-span-3 lg:col-span-3 lg:row-span-1 rounded-2xl aspect-9/10 lg:aspect-21/9 overflow-hidden">
+        <div className="shadow-md col-span-1 row-span-3 lg:col-span-3 lg:row-span-1 rounded-2xl aspect-9/10 lg:aspect-21/9 overflow-hidden">
           <Image
             src={displayItems[1].src}
             alt=""
@@ -53,7 +53,7 @@ export default function FeaturedGrid({ title, items} : FeaturedGridProps) {
           />
         </div>
 
-        <div className="col-span-1 row-span-3 lg:col-span-2 lg:row-span-1 rounded-2xl aspect-9/10 lg:aspect-video overflow-hidden">
+        <div className="shadow-md col-span-1 row-span-3 lg:col-span-2 lg:row-span-1 rounded-2xl aspect-9/10 lg:aspect-video overflow-hidden">
           <Image
             src={displayItems[2].src}
             alt=""
@@ -63,7 +63,7 @@ export default function FeaturedGrid({ title, items} : FeaturedGridProps) {
           />
         </div>
 
-        <div className="col-span-1 row-span-3 lg:col-span-2 lg:row-span-1 rounded-2xl aspect-9/10 lg:aspect-video overflow-hidden">
+        <div className="shadow-md col-span-1 row-span-3 lg:col-span-2 lg:row-span-1 rounded-2xl aspect-9/10 lg:aspect-video overflow-hidden">
           <Image
             src={displayItems[3].src}
             alt=""
@@ -73,7 +73,7 @@ export default function FeaturedGrid({ title, items} : FeaturedGridProps) {
           />
         </div>
 
-        <div className="hidden lg:block col-span-2 row-span-1 rounded-2xl aspect-video overflow-hidden">
+        <div className="shadow-md hidden lg:block col-span-2 row-span-1 rounded-2xl aspect-video overflow-hidden">
           <Image
             src={displayItems[4].src}
             alt=""
