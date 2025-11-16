@@ -2,6 +2,7 @@ import Image from "next/image";
 import CheckNavbar from "../components/Navbar";
 import Carousel from "../widgets/Carousel";
 import CarWidget from "@/widgets/CarWidget";
+import TravelPack from "@/widgets/TravelPack";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 
@@ -9,9 +10,8 @@ import WidgetRenderer from "@/widgets/WidgetRenderer";
 import { Widget } from "@/widgets/types";
 
 export default async function Home() {
-
-  const response = await fetch('http://127.0.0.1:8000/');
-  const data = (await response.json()) as {widgets: Widget[]}
+  const response = await fetch("http://127.0.0.1:8000/");
+  const data = (await response.json()) as { widgets: Widget[] };
   console.log(data);
 
   return (
@@ -26,12 +26,15 @@ export default async function Home() {
           <CarWidget />
         </div>
 
-      {data.widgets.map((widget, index) => (
-        <div key={index} className="w-full max-w-7xl px-4">
-            <WidgetRenderer widget={widget} />
+        <div className="w-full max-w-7xl px-4">
+          <TravelPack />
         </div>
-      ))}
 
+        {data.widgets.map((widget, index) => (
+          <div key={index} className="w-full max-w-7xl px-4">
+            <WidgetRenderer widget={widget} />
+          </div>
+        ))}
       </main>
       <Footer />
     </div>

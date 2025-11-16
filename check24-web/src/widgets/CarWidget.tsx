@@ -30,8 +30,11 @@ export default function CarWidget() {
     },
   ];
 
+  const title = "Alles rund um Ihr Auto!";
+  
   return (
     <div className="max-w-7xl mx-auto p-1">
+      {title && <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-4">{title}</h2>}
       <div className="flex gap-1 lg:gap-3 p-1">
         {/* INSURANCE */}
         <div className="shadow-md bg-neutral-50 rounded-2xl flex overflow-hidden relative w-1/2">
