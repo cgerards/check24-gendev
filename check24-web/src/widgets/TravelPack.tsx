@@ -52,8 +52,8 @@ export default function TravelPack() {
             className="col-span-1 w-1/2 h-full object-cover"
           />
           <div className="flex flex-col p-5 justify-center grow">
-            <h2 className="font-bold">eSIM</h2>
-            <div className="flex flex-col gap-y-2 mt-4 mb-5">
+            <h2 className="font-bold">Eine eSIM für Ihr Datenvolumen</h2>
+            <div className="flex flex-col gap-y-2 mt-4 mb-2">
               <DataPlanSelector />
               <div className="relative mb-4">
                 <div className="absolute inset-y-0 left-0 flex pl-2 items-center pointer-events-none">
@@ -64,7 +64,7 @@ export default function TravelPack() {
                   ></Image>
                 </div>
                 <input
-                  className="pl-8 bg-white border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full px-3 shadow-xs placeholder:text-gray-400 py-1.5"
+                  className="pl-8 bg-white border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full shadow-xs placeholder:text-gray-400 py-1.5"
                   placeholder="Reiseland angeben"
                   required
                 />
@@ -87,7 +87,7 @@ export default function TravelPack() {
           />
 
           <div className="flex flex-col p-5 justify-center grow">
-            <h2 className="font-bold">Mietwagen buchen</h2>
+            <h2 className="font-bold">Den richtigen Mietwagen buchen</h2>
             <div className="flex flex-col gap-y-2 mt-4 mb-5">
               <div className="flex flex-row justify-between gap-2">
                 <div className="relative w-full">

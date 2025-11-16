@@ -19,7 +19,7 @@ export default function CustomDatePicker({ placeholder }: DatePickerProps) {
         <Image
           src={calendarIcon}
           alt="Calendar Icon"
-          className="text-gray-500 h-4 w-4"
+          className="text-gray-500 h-4 w-4 z-100"
         />
       </div>
       <DatePicker
