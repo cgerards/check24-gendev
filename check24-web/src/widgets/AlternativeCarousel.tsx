@@ -42,7 +42,7 @@ const AlternativeCarousel = (props: any) => {
       alt: "Placeholder 2",
     },
     {
-      src: "https://picsum.photos/seed/c/1200/675",
+      src: "https://media.istockphoto.com/id/2208573887/de/foto/mutter-und-tochter-genie%C3%9Fen-einen-entspannten-tag-am-see.webp?s=2048x2048&w=is&k=20&c=rbEVKk5RCjtxxdzdONDwQ2DeRCY9tR5qLe12cehuGSo=",
       alt: "Placeholder 3",
     },
     {
@@ -139,11 +139,48 @@ const AlternativeCarousel = (props: any) => {
           </div>
 
           <div className="embla__slide">
-            <div className="flex flex-row justify-between gap-2">
-              <CustomDatePicker placeholder="Abholdatum" />
-              <CustomDatePicker placeholder="Rückgabedatum" />
+            {/* TRAVEL INSURANCE */}
+            <div className="shadow-md bg-neutral-50 rounded-2xl flex relative w-full h-full">
+              <Image
+                src={displayItems[2].src}
+                alt=""
+                width={1200}
+                height={675}
+                className="col-span-1 w-1/2 h-full object-cover rounded-l-2xl overflow-hidden"
+              />
+
+              <div className="flex flex-col p-5 justify-center grow">
+                <h2 className="font-bold">Für die Reise absichern</h2>
+                <div className="flex flex-col gap-y-2 mt-4 mb-5">
+                  <div className="flex flex-row justify-between gap-2">
+                    <div className="relative w-full">
+                      <div className="absolute inset-y-0 left-0 flex pl-2 items-center pointer-events-none">
+                        <Image
+                          src={location}
+                          alt="Reiseort für Reiseversicherung"
+                          className="text-gray-500 h-4 w-4"
+                        ></Image>
+                      </div>
+                      <input
+                        className="pl-8 bg-white border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full px-3 shadow-xs placeholder:text-gray-400 py-1.5"
+                        placeholder="Reiseort"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="flex flex-row justify-between gap-2">
+                    <CustomDatePicker placeholder="Reisestart" />
+                    <CustomDatePicker placeholder="Reiseende" />
+                  </div>
+                </div>
+
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+                  Jetzt versichern
+                </button>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
 
