@@ -8,6 +8,7 @@ import Image from "next/image";
 import location from "../../public/location.svg";
 
 import CustomDatePicker from "@/components/DatePicker";
+import InsurancePicker from "@/components/InsurancePicker";
 
 import {
   PrevButton,
@@ -18,7 +19,11 @@ import useEmblaCarousel from "embla-carousel-react";
 
 const AlternativeCarousel = (props: any) => {
   const { slides, options } = props;
-  const emblaOptions = { align: 'start', containScroll: 'trimSnaps', ...(options || {}) };
+  const emblaOptions = {
+    align: "start",
+    containScroll: "trimSnaps",
+    ...(options || {}),
+  };
   const [emblaRef, emblaApi] = useEmblaCarousel(emblaOptions);
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
@@ -151,7 +156,8 @@ const AlternativeCarousel = (props: any) => {
 
               <div className="flex flex-col p-5 justify-center grow">
                 <h2 className="font-bold">Für die Reise absichern</h2>
-                <div className="flex flex-col gap-y-2 mt-4 mb-5">
+                <div className="flex flex-col gap-y-2 mt-4 mb-3">
+                  <InsurancePicker />
                   <div className="flex flex-row justify-between gap-2">
                     <div className="relative w-full">
                       <div className="absolute inset-y-0 left-0 flex pl-2 items-center pointer-events-none">
@@ -180,7 +186,6 @@ const AlternativeCarousel = (props: any) => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
