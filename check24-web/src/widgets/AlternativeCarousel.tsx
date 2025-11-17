@@ -158,22 +158,7 @@ const AlternativeCarousel = (props: any) => {
                 <h2 className="font-bold">Für die Reise absichern</h2>
                 <div className="flex flex-col gap-y-2 mt-4 mb-3">
                   <InsurancePicker />
-                  <div className="flex flex-row justify-between gap-2">
-                    <div className="relative w-full">
-                      <div className="absolute inset-y-0 left-0 flex pl-2 items-center pointer-events-none">
-                        <Image
-                          src={location}
-                          alt="Reiseort für Reiseversicherung"
-                          className="text-gray-500 h-4 w-4"
-                        ></Image>
-                      </div>
-                      <input
-                        className="pl-8 bg-white border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full px-3 shadow-xs placeholder:text-gray-400 py-1.5"
-                        placeholder="Reiseort"
-                        required
-                      />
-                    </div>
-                  </div>
+                  
                   <div className="flex flex-row justify-between gap-2">
                     <CustomDatePicker placeholder="Reisestart" />
                     <CustomDatePicker placeholder="Reiseende" />
