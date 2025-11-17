@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import calendarIcon from "../../public/calendar.svg";
 
@@ -27,6 +28,9 @@ export default function CustomDatePicker({ placeholder }: DatePickerProps) {
         onChange={(date) => setStartDate(date)}
         className="pl-8 bg-white border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full px-3 shadow-xs placeholder:text-gray-400 py-1.5"
         placeholderText={placeholder}
+        popperContainer={({ children }) =>
+          typeof document !== "undefined" ? createPortal(children, document.body) : null
+        }
       />
     </div>
   );

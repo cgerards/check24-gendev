@@ -1,8 +1,16 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Embla / UI fallback variables used by embla.css */
+  --detail-medium-contrast: rgba(0,0,0,0.08);
+  --detail-high-contrast: rgba(0,0,0,0.28);
+  --text-body: #171717;
+  /* RGB value used in some -webkit-tap-highlight-color rules */
+  --text-high-contrast-rgb-value: 23,23,23;
 }
 
 @theme inline {
@@ -14,12 +22,12 @@
   --color-checkblue: oklch(0.3547 0.1734 263.03);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #a88787;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
