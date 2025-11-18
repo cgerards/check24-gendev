@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-app = FastAPI(title="Car Insurance Widget")
+app = FastAPI(title="Shopping Widget")
 
 class WidgetResponse(BaseModel):
     widget: str
@@ -10,9 +10,8 @@ class WidgetResponse(BaseModel):
 
 @app.get("/widget", response_model=WidgetResponse)
 def get_widget(user_id: int):
-    # Simulate personalized logic
     offers = [
         "Car Insurance Premium - 20% off",
         "Electric Vehicle Bonus Plan",
     ]
-    return WidgetResponse(widget="Car Insurance", offers=offers, user_id=user_id)
+    return WidgetResponse(widget="Shopping", offers=offers, user_id=user_id)

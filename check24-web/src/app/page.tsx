@@ -6,7 +6,7 @@ import TravelPack from "@/widgets/TravelPack";
 import AlternativeCarousel from "@/widgets/AlternativeCarousel";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
-import './embla.css'
+import "./embla.css";
 
 import WidgetRenderer from "@/widgets/WidgetRenderer";
 import { Widget } from "@/widgets/types";
@@ -16,7 +16,7 @@ export default async function Home() {
   const data = (await response.json()) as { widgets: Widget[] };
   console.log(data);
 
-  const SLIDES = Array.from(Array(6).keys())
+  const SLIDES = Array.from(Array(6).keys());
 
   return (
     <div className="flex flex-col min-h-screen w-full">
@@ -30,15 +30,15 @@ export default async function Home() {
           <CarWidget />
         </div>
 
+        {/*
         <div className="w-full max-w-7xl px-4">
           <TravelPack />
         </div>
+        */}
 
         <div className="w-full max-w-7xl px-4">
           <AlternativeCarousel slides={SLIDES} />
         </div>
-
-
 
         {data.widgets.map((widget, index) => (
           <div key={index} className="w-full max-w-7xl px-4">
