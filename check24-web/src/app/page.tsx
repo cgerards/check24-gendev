@@ -4,6 +4,7 @@ import Carousel from "../widgets/Carousel";
 import CarWidget from "@/widgets/CarWidget";
 import TravelPack from "@/widgets/TravelPack";
 import AlternativeCarousel from "@/widgets/AlternativeCarousel";
+import SportTravel from "@/widgets/SportTravel";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import "./embla.css";
@@ -38,6 +39,10 @@ export default async function Home() {
 
         <div className="w-full max-w-7xl px-4">
           <AlternativeCarousel slides={SLIDES} />
+        </div>
+
+        <div className="w-full max-w-7xl px-4">
+          <SportTravel title="Beliebte Sportreisen durchstöbern!" items = {[]}/>
         </div>
 
         {data.widgets.map((widget, index) => (
