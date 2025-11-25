@@ -35,15 +35,15 @@ export default function CarWidget() {
   return (
     <div className="max-w-7xl mx-auto p-1">
       {title && <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-4">{title}</h2>}
-      <div className="flex gap-1 lg:gap-3 p-1">
+      <div className="flex flex-col sm:flex-row gap-3 p-1">
         {/* INSURANCE */}
-        <div className="shadow-md bg-neutral-50 rounded-2xl flex overflow-hidden relative w-1/2">
+        <div className="shadow-md bg-neutral-50 rounded-2xl flex flex-col sm:flex-row overflow-hidden relative">
           <Image
             src={displayItems[0].src}
             alt=""
             width={1200}
             height={675}
-            className="col-span-1 w-1/2 h-full object-cover"
+            className="w-full sm:w-1/2 h-48 sm:h-auto object-cover"
           />
           <div className="flex flex-col p-5 justify-center grow">
             <h2 className="font-bold">Autoversicherung abschließen</h2>
@@ -73,13 +73,13 @@ export default function CarWidget() {
           </div>
         </div>
 
-        <div className="shadow-md bg-neutral-50 rounded-2xl flex overflow-hidden relative w-1/2">
+        <div className="shadow-md bg-neutral-50 rounded-2xl flex flex-col sm:flex-row overflow-hidden relative">
           <Image
             src={displayItems[1].src}
             alt=""
             width={1200}
             height={675}
-            className="col-span-1 w-1/2 h-full object-cover"
+            className="w-full sm:w-1/2 h-48 sm:h-auto object-cover"
           />
 
           {/* TIRES */}

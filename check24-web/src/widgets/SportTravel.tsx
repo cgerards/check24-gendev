@@ -48,7 +48,7 @@ export default function SportTravel({ title, items }: FeaturedGridProps) {
         </h2>
       )}
 
-      <div className="grid grid-cols-4 gap-3">
+      <div className="grid lg:grid-cols-4 gap-3">
         <div className="shadow-md col-span-1 row-span-1 lg:col-span-1 lg:row-span-1 rounded-2xl aspect-video lg:aspect-video overflow-hidden relative">
           <span className="rounded absolute top-0 left-0 m-3 px-2 py-1 text-m text-amber-50 font-bold z-20">
             Skifahren
