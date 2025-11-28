@@ -10,23 +10,10 @@ export default function CarWidget() {
     {
       src: "https://media.istockphoto.com/id/1460051199/de/foto/blauer-bmw-m3.jpg?s=2048x2048&w=is&k=20&c=Xf0Unc0G4igZQNpj0IbdkmYy9c1Zi8FQSKJanzr6LmY=",
       alt: "Placeholder 1",
-      label: "Argentinien",
     },
     {
       src: "https://media.istockphoto.com/id/2227068029/de/foto/winterreifen-auf-verschneiter-stra%C3%9Fe.webp?s=2048x2048&w=is&k=20&c=aG5YfefniZfRbwLSAu5Ad9t3__cZCORzwirrxYCFO7Q=",
       alt: "Placeholder 2",
-    },
-    {
-      src: "https://picsum.photos/seed/c/1200/675",
-      alt: "Placeholder 3",
-    },
-    {
-      src: "https://picsum.photos/seed/d/1200/675",
-      alt: "Placeholder 4",
-    },
-    {
-      src: "https://picsum.photos/seed/e/1200/675",
-      alt: "Placeholder 5",
     },
   ];
 

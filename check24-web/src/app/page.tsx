@@ -4,19 +4,25 @@ import Carousel from "../widgets/Carousel";
 import CarWidget from "@/widgets/CarWidget";
 import TravelPack from "@/widgets/TravelPack";
 import AlternativeCarousel from "@/widgets/AlternativeCarousel";
-import SportTravel from "@/widgets/SportTravel";
+import BasicGrid from "@/widgets/BasicGrid";
 import Deal from "@/widgets/Deal";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import "./embla.css";
 
 import WidgetRenderer from "@/widgets/WidgetRenderer";
-import { Widget } from "@/widgets/types";
+import { Widget, BasicGridItem } from "@/widgets/types";
 
 export default async function Home() {
   const response = await fetch("http://127.0.0.1:8000/");
   const data = (await response.json()) as { widgets: Widget[] };
   console.log(data);
+
+
+  const responseSport = await fetch("http://127.0.0.1:8002/sport");
+  const dataSport = (await responseSport.json()) as { header : string, items: BasicGridItem[] };
+  // console.log(dataSport);
+  // console.log("HALLO");
 
   const SLIDES = Array.from(Array(6).keys());
 
@@ -43,7 +49,7 @@ export default async function Home() {
         </div>
 
         <div className="w-full max-w-7xl px-4">
-          <SportTravel title="Beliebte Sportreisen durchstöbern!" items = {[]}/>
+          <BasicGrid header={dataSport.header} items = {dataSport.items}/>
         </div>
 
          <div className="w-full max-w-7xl px-4">

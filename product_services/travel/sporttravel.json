@@ -1,0 +1,29 @@
+{
+  "header": "Beliebte Sportreisen entdecken!",
+  "items": [
+    {
+      "title": "Skifahren",
+      "subtitle": "2.331 Angebote",
+      "src": "https://media.istockphoto.com/id/2193052367/de/foto/teenage-boy-spending-winter-holiday-skiing-in-mountain.jpg?s=612x612&w=0&k=20&c=YBjS-UWPw3jU_GPf4_6Rado72-d_yEcaGwHWPynziCA=",
+      "alt": "Skifahren Reise"
+    },
+    {
+      "title": "Wandern",
+      "subtitle": "3.423 Angebote",
+      "src": "https://media.istockphoto.com/id/1137727247/de/foto/abenteuer-in-den-dolomiten-jugendliche-wandern-mit-hund.jpg?s=612x612&w=0&k=20&c=HpV7QRQkvOeYRg-IaFhmk0O1SjETk_sWSSlFmeqWXW0=",
+      "alt": "Wandern Reise"
+    },
+    {
+      "title": "Tauchen",
+      "subtitle": "1.264 Angebote",
+      "src": "https://media.istockphoto.com/id/641164064/de/foto/tauchen-gozo.jpg?s=612x612&w=0&k=20&c=9I3g4OCXr2RWz7LPncayzLSENKtrPBXzvi4fOponyQ8=",
+      "alt": "Tauchen Reise"
+    },
+    {
+      "title": "Mountainbike",
+      "subtitle": "3.984 Angebote",
+      "src": "https://media.istockphoto.com/id/1392998046/de/foto/mountainbiker.jpg?s=612x612&w=0&k=20&c=51pt2TOQBkxapKozqJ5MVF6EItE8UVPG_6_2xkn3YkM=",
+      "alt": "Mountainbike Reise"
+    }
+  ]
+}

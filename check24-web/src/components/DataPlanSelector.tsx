@@ -10,6 +10,7 @@ export default function DataPlanSelector() {
     { label: "5GB", value: 5 },
     { label: "10GB", value: 10 },
     { label: "20GB", value: 20 },
+    // { label: "40GB", value: 40 },
   ];
 
   const handlePlanSelect = (plan: number) => {
@@ -23,7 +24,7 @@ export default function DataPlanSelector() {
       <div className="relative inline-flex w-full items-center justify-center rounded-lg bg-gray-100 p-1 shadow-inner">
         <div
           className="absolute left-1 h-[calc(100%-0.5rem)] w-1/4 transform rounded-md bg-white shadow transition-transform duration-300 ease-in-out"
-          style={{ transform: `translateX(${selectedIndex * 96}%)` }}
+          style={{ transform: `translateX(${selectedIndex * 96}%)`, width: `${100 / plans.length}%`, }}
         />
 
         {plans.map((plan) => (
