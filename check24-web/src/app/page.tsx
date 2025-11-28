@@ -11,20 +11,42 @@ import Footer from "@/components/Footer";
 import "./embla.css";
 
 import WidgetRenderer from "@/widgets/WidgetRenderer";
-import { Widget, BasicGridItem } from "@/widgets/types";
+import { Widget, BasicGridItem, DealItem } from "@/widgets/types";
 
 export default async function Home() {
   const response = await fetch("http://127.0.0.1:8000/");
   const data = (await response.json()) as { widgets: Widget[] };
   console.log(data);
 
-
   const responseSport = await fetch("http://127.0.0.1:8002/sport");
-  const dataSport = (await responseSport.json()) as { header : string, items: BasicGridItem[] };
+  const dataSport = (await responseSport.json()) as {
+    header: string;
+    items: BasicGridItem[];
+  };
   // console.log(dataSport);
   // console.log("HALLO");
 
   const SLIDES = Array.from(Array(6).keys());
+
+  const dealBlack = {
+    title: "Black Friday Deals",
+    description:
+      "Nur noch für kurze Zeit: Angebote auf Reisen, Autovermietungen und Versicherungen mit bis zu [ 50% Rabatt]. Sichere Dir jetzt den Deal!",
+    bubble: "✨ Black Friday",
+    button: "Jetzt Shoppen",
+    addition: "Lerne mehr",
+    season: "blackfriday",
+  };
+
+  const dealChristmas = {
+    title: "Weihnachts & Silvester Specials",
+    description:
+      "Wir feiern Weihnachten mit großen Rabatten auf Reisen! Spare bis zu [ 40%] bei Komplettreisen! Geschenkgutscheine verfügbar.",
+    bubble: "✨ Weihnachtsdeals",
+    button: "Jetzt Shoppen",
+    addition: "Lerne mehr",
+    season: "christmas"
+  };
 
   return (
     <div className="flex flex-col min-h-screen w-full">
@@ -49,11 +71,15 @@ export default async function Home() {
         </div>
 
         <div className="w-full max-w-7xl px-4">
-          <BasicGrid header={dataSport.header} items = {dataSport.items}/>
+          <BasicGrid header={dataSport.header} items={dataSport.items} />
         </div>
 
-         <div className="w-full max-w-7xl px-4">
-          <Deal title="Unsere Black-Friday Deals!" items = {[]}/>
+        <div className="w-full max-w-7xl px-4">
+          <Deal deal={dealBlack} />
+        </div>
+
+        <div className="w-full max-w-7xl px-4">
+          <Deal deal={dealChristmas} />
         </div>
 
         {data.widgets.map((widget, index) => (
