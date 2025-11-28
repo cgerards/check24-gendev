@@ -2,42 +2,50 @@
 
 import Image from "next/image";
 
-interface GridItem {
-  src: string;
-  alt: string;
-}
-
-interface FeaturedGridProps {
+interface DealItem {
   title: string;
-  items: GridItem[];
+  description: string;
+  bubble: string;
+  button: string;
+  addition: string;
 }
 
-export default function Deal({ title, items }: FeaturedGridProps) {
+interface DealProps {
+  title: string;
+  items: DealItem[];
+}
+
+
+function formatDescription(text: string) {
+  const parts = text.split(/\[(.*?)\]/);
+  return parts.map((part, i) =>
+    i % 2 === 1 ? (
+      <span key={i} className="font-bold text-amber-300">{part}</span>
+    ) : (
+      part
+    )
+  );
+}
+
+export default function Deal({ title, items }: DealProps) {
   const displayItems =
     items && items.length > 0
       ? items
       : [
           {
-            src: "https://media.istockphoto.com/id/2193052367/de/foto/teenage-boy-spending-winter-holiday-skiing-in-mountain.jpg?s=612x612&w=0&k=20&c=YBjS-UWPw3jU_GPf4_6Rado72-d_yEcaGwHWPynziCA=",
-            alt: "Placeholder 1",
-            label: "Argentinien",
-          },
-          {
-            src: "https://media.istockphoto.com/id/1137727247/de/foto/abenteuer-in-den-dolomiten-jugendliche-wandern-mit-hund.jpg?s=612x612&w=0&k=20&c=HpV7QRQkvOeYRg-IaFhmk0O1SjETk_sWSSlFmeqWXW0=",
-            alt: "Placeholder 2",
-          },
-          {
-            src: "https://media.istockphoto.com/id/641164064/de/foto/tauchen-gozo.jpg?s=612x612&w=0&k=20&c=9I3g4OCXr2RWz7LPncayzLSENKtrPBXzvi4fOponyQ8=",
-            alt: "Placeholder 3",
-          },
-          {
-            src: "https://media.istockphoto.com/id/1392998046/de/foto/mountainbiker.jpg?s=612x612&w=0&k=20&c=51pt2TOQBkxapKozqJ5MVF6EItE8UVPG_6_2xkn3YkM=",
-            alt: "Placeholder 4",
-          },
-          {
-            src: "https://picsum.photos/seed/e/1200/675",
-            alt: "Placeholder 5",
-          },
+            title: "Black Friday Deals",
+            description: 'Nur noch für kurze Zeit: Angebote auf Reisen, Autovermietungen und Versicherungen mit bis zu [ 50% Rabatt]. Sichere Dir jetzt den Deal!',
+            bubble: "✨ Black Friday",
+            button: "Jetzt Shoppen",
+            addition: "Lerne mehr"
+            },
+            {
+            title: "Weihnachts & Silvester Specials",
+            description: 'Wir feiern Weihnachten mit großen Rabatten auf Reisen! Spare bis zu [ 40%] bei Komplettreisen! Geschenkgutscheine verfügbar.',
+            bubble: "✨ Weihnachtsdeals",
+            button: "Jetzt Shoppen",
+            addition: "Lerne mehr"
+            },
         ];
 
   return (
@@ -56,17 +64,16 @@ export default function Deal({ title, items }: FeaturedGridProps) {
         >
           {/* Decorative top-left badge */}
           <span className="mb-1 inline-flex items-center gap-2 rounded-full bg-black/50 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
-            ✨ Black Friday
+            {displayItems[0].bubble}
           </span>
 
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div className="min-w-0">
               <h3 className="text-2xl sm:text-3xl font-extrabold leading-tight">
-                Black Friday Deals
+                {displayItems[0].title}
               </h3>
               <p className="mt-1 text-sm sm:text-base text-amber-100/90 max-w-xl">
-                Nur noch für kurze Zeit: Angebote auf Reisen, Autovermietungen und Versicherungen mit bis zu
-                <span className="font-bold text-amber-300"> 50% Rabatt</span>. Sichere Dir jetzt den Deal!
+                {formatDescription(displayItems[0].description)}
               </p>
             </div>
 
@@ -76,7 +83,7 @@ export default function Deal({ title, items }: FeaturedGridProps) {
                 className="inline-flex items-center gap-2 rounded-md bg-amber-400/95 px-4 py-2 text-sm font-semibold text-neutral-900 shadow hover:bg-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-200"
                 aria-label="Show Black Friday deals"
               >
-                Jetzt Shoppen
+                {displayItems[0].button}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-4 w-4"
@@ -96,7 +103,7 @@ export default function Deal({ title, items }: FeaturedGridProps) {
                 href="#learn"
                 className="text-sm text-amber-100 underline hover:text-white"
               >
-                Lerne mehr
+                {displayItems[0].addition}
               </a>
             </div>
           </div>
@@ -109,18 +116,16 @@ export default function Deal({ title, items }: FeaturedGridProps) {
           className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-emerald-900 via-emerald-800 to-rose-700 text-white p-6 sm:p-8 mt-6 shadow-lg"
         >
           <span className="mb-1 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
-            ✨ Weihnachtsdeals
+            {displayItems[1].bubble}
           </span>
 
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div className="min-w-0">
               <h3 className="text-2xl sm:text-3xl font-extrabold leading-tight">
-                Weihnachts & Silvester Specials
+                {displayItems[1].title}
               </h3>
               <p className="mt-1 text-sm sm:text-base text-amber-50/90 max-w-xl">
-              Wir feiern Weihnachten mit großen Rabatten auf Reisen! Spare bis zu
-                <span className="font-bold"> 40%</span> bei Komplettreisen!
-                Geschenkgutscheine verfügbar.
+              {formatDescription(displayItems[1].description)}
               </p>
             </div>
 
@@ -130,7 +135,7 @@ export default function Deal({ title, items }: FeaturedGridProps) {
                 className="inline-flex items-center gap-2 rounded-md bg-rose-500/95 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-rose-400 focus:outline-none focus:ring-2 focus:ring-rose-300"
                 aria-label="Explore Christmas deals"
               >
-                Finde Geschenke
+                {displayItems[1].button}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-4 w-4"
@@ -150,7 +155,7 @@ export default function Deal({ title, items }: FeaturedGridProps) {
                 href="#gifts"
                 className="text-sm text-amber-100 underline hover:text-white"
               >
-                Lerne mehr
+                {displayItems[1].addition}
               </a>
             </div>
           </div>
