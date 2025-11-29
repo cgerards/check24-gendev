@@ -12,6 +12,7 @@ import "./embla.css";
 
 import WidgetRenderer from "@/widgets/WidgetRenderer";
 import { Widget, BasicGridItem, DealItem } from "@/widgets/types";
+import FeaturedGrid from "@/widgets/FeaturedGrid";
 
 export default async function Home() {
   const response = await fetch("http://127.0.0.1:8000/");
@@ -23,7 +24,13 @@ export default async function Home() {
     header: string;
     items: BasicGridItem[];
   };
-  // console.log(dataSport);
+
+  const responseNormalTravel = await fetch("http://127.0.0.1:8002/normal");
+  const dataNormalTravel = (await responseNormalTravel.json()) as {
+    header: string;
+    items: BasicGridItem[];
+  };
+  console.log(dataNormalTravel);
   // console.log("HALLO");
 
   const SLIDES = Array.from(Array(6).keys());
@@ -45,7 +52,7 @@ export default async function Home() {
     bubble: "✨ Weihnachtsdeals",
     button: "Jetzt Shoppen",
     addition: "Lerne mehr",
-    season: "christmas"
+    season: "christmas",
   };
 
   return (
@@ -75,6 +82,13 @@ export default async function Home() {
         </div>
 
         <div className="w-full max-w-7xl px-4">
+          <FeaturedGrid
+            header={dataNormalTravel.header}
+            items={dataNormalTravel.items}
+          />
+        </div>
+
+        <div className="w-full max-w-7xl px-4">
           <Deal deal={dealBlack} />
         </div>
 
@@ -82,11 +96,13 @@ export default async function Home() {
           <Deal deal={dealChristmas} />
         </div>
 
+        {/*
         {data.widgets.map((widget, index) => (
           <div key={index} className="w-full max-w-7xl px-4">
             <WidgetRenderer widget={widget} />
           </div>
         ))}
+           */}
       </main>
       <Footer />
     </div>

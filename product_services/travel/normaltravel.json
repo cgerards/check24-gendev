@@ -1,0 +1,35 @@
+{
+  "header": "Finden Sie Ihre Traumreise!",
+  "items": [
+    {
+      "title": "Rügen",
+      "subtitle": "4.811 Unterkünfte",
+      "src": "https://media.istockphoto.com/id/1569125895/de/foto/chalk-cliffs-on-r%C3%BCgen.jpg?s=612x612&w=0&k=20&c=6ZR2spr_tLRCGHCsdV-2yJAjgVCTlBzD1vpDH9pAzD4=",
+      "alt": "Kreidefelsen Rügen"
+    },
+    {
+      "title": "Dolomiten",
+      "subtitle": "4.562 Unterkünfte",
+      "src": "https://media.istockphoto.com/id/479684470/de/foto/dolomiten-alpen-mountain-val-di-funes.jpg?s=612x612&w=0&k=20&c=JbpHj51ygWxwkyhaGk1M5UzwmlwMgfxktUwNVFFL9e4=",
+      "alt": "Dolomiten"
+    },
+    {
+      "title": "Kreta",
+      "subtitle": "1.988 Unterkünfte",
+      "src": "https://media.istockphoto.com/id/2185710961/de/foto/rethymno-kreta-griechenland.jpg?s=612x612&w=0&k=20&c=7avgalkS-0qHdJiLX3g8BNTP0vQBzsf5fzFx2j-60ws=",
+      "alt": "Kreta"
+    },
+    {
+      "title": "Gardasee",
+      "subtitle": "2.114 Unterkünfte",
+      "src": "https://media.istockphoto.com/id/1584636799/de/foto/landschaft-mit-malcesine-stadt-gardasee-italien.jpg?s=612x612&w=0&k=20&c=KhtBy0PCxf1f8bLkdxCKR2FSmtM_dxEAoY_j_M5xq0s=",
+      "alt": "Gardasee"
+    },
+    {
+      "title": "Mallorca",
+      "subtitle": "1.320 Unterkünfte",
+      "src": "https://media.istockphoto.com/id/2205397650/de/foto/port-soller-mallorca.jpg?s=612x612&w=0&k=20&c=khQ3FYupvsKTnjyKezE7t5eteSvaMU3wVeA0nGDvUFk=",
+      "alt": "Mallorca"
+    }
+  ]
+}
