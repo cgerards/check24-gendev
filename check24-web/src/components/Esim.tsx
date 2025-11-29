@@ -8,26 +8,9 @@ import location from "../../public/location.svg";
 
 const displayItems = [
     {
-      src: "https://media.istockphoto.com/id/1155872315/de/foto/wei%C3%9Fe-sim-karte-auf-wei%C3%9Fem-hintergrund.webp?s=2048x2048&w=is&k=20&c=mkA8nEL6B8kUDrQrbs9LJNiGiHKrJ0WCn9vH0mO4eNg=",
-      alt: "Placeholder 1",
-      label: "Argentinien",
-    },
-    {
-      src: "https://media.istockphoto.com/id/2190195833/de/foto/ein-paar-das-in-einem-auto-sitzt-und-die-schl%C3%BCssel-von-einem-autoh%C3%A4ndler-erh%C3%A4lt.webp?s=2048x2048&w=is&k=20&c=pR3oy0-MkDUA_0AgXlFxoDpUQdxLC0cnw_czwoQUmkU=",
-      alt: "Placeholder 2",
-    },
-    {
-      src: "https://media.istockphoto.com/id/2208573887/de/foto/mutter-und-tochter-genie%C3%9Fen-einen-entspannten-tag-am-see.webp?s=2048x2048&w=is&k=20&c=rbEVKk5RCjtxxdzdONDwQ2DeRCY9tR5qLe12cehuGSo=",
-      alt: "Placeholder 3",
-    },
-    {
-      src: "https://picsum.photos/seed/d/1200/675",
-      alt: "Placeholder 4",
-    },
-    {
-      src: "https://picsum.photos/seed/e/1200/675",
-      alt: "Placeholder 5",
-    },
+      src: "https://media.istockphoto.com/id/1155872315/de/foto/wei%C3%9Fe-sim-karte-auf-wei%C3%9Fem-hintergrund.jpg?s=612x612&w=0&k=20&c=sYJKn6WtcHmkvmXEHr9x4UwKD--lcPhW4BlJxWKtAwU=",
+      alt: "eSIM"
+    }
   ];
 
 export default function Esim() {

@@ -8,34 +8,17 @@ import CustomDatePicker from "./DatePicker";
 
 const displayItems = [
     {
-      src: "https://media.istockphoto.com/id/1155872315/de/foto/wei%C3%9Fe-sim-karte-auf-wei%C3%9Fem-hintergrund.webp?s=2048x2048&w=is&k=20&c=mkA8nEL6B8kUDrQrbs9LJNiGiHKrJ0WCn9vH0mO4eNg=",
-      alt: "Placeholder 1",
-      label: "Argentinien",
-    },
-    {
-      src: "https://media.istockphoto.com/id/2190195833/de/foto/ein-paar-das-in-einem-auto-sitzt-und-die-schl%C3%BCssel-von-einem-autoh%C3%A4ndler-erh%C3%A4lt.webp?s=2048x2048&w=is&k=20&c=pR3oy0-MkDUA_0AgXlFxoDpUQdxLC0cnw_czwoQUmkU=",
-      alt: "Placeholder 2",
-    },
-    {
-      src: "https://media.istockphoto.com/id/2208573887/de/foto/mutter-und-tochter-genie%C3%9Fen-einen-entspannten-tag-am-see.webp?s=2048x2048&w=is&k=20&c=rbEVKk5RCjtxxdzdONDwQ2DeRCY9tR5qLe12cehuGSo=",
-      alt: "Placeholder 3",
-    },
-    {
-      src: "https://picsum.photos/seed/d/1200/675",
-      alt: "Placeholder 4",
-    },
-    {
-      src: "https://picsum.photos/seed/e/1200/675",
-      alt: "Placeholder 5",
-    },
+      src: "https://media.istockphoto.com/id/1389868819/de/foto/fr%C3%B6hliche-alleinerziehende-mutter-und-tochter-mit-spa%C3%9F-am-herbsttag.jpg?s=612x612&w=0&k=20&c=LEvlh5oLzUCbKuPnohfDM6H7di50xwjJBG70IuLp_70=",
+      alt: "Mietwagen",
+    }
   ];
 
-export default function RentalCar() {
+export default function TravelInsurance() {
 
     return (
                 <div className="shadow-md bg-neutral-50 rounded-2xl flex relative w-full h-full">
                   <Image
-                    src={displayItems[2].src}
+                    src={displayItems[0].src}
                     alt=""
                     width={1200}
                     height={675}
