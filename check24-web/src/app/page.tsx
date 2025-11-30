@@ -39,29 +39,18 @@ export default async function Home() {
   };
 
 
+  const responseBlackfriday = await fetch("http://127.0.0.1:8003/blackfriday");
+  const dataBlackfriday = (await responseBlackfriday.json()) as DealItem;
+
+  const responseChristmas = await fetch("http://127.0.0.1:8003/christmas");
+  const dataChristmas = (await responseChristmas.json()) as DealItem;
+
+
   // console.log("HALLO");
 
   const SLIDES = Array.from(Array(6).keys());
 
-  const dealBlack = {
-    title: "Black Friday Deals",
-    description:
-      "Nur noch für kurze Zeit: Angebote auf Reisen, Autovermietungen und Versicherungen mit bis zu [ 50% Rabatt]. Sichere Dir jetzt den Deal!",
-    bubble: "✨ Black Friday",
-    button: "Jetzt Shoppen",
-    addition: "Lerne mehr",
-    season: "blackfriday",
-  };
 
-  const dealChristmas = {
-    title: "Weihnachts & Silvester Specials",
-    description:
-      "Wir feiern Weihnachten mit großen Rabatten auf Reisen! Spare bis zu [ 40%] bei Komplettreisen! Geschenkgutscheine verfügbar.",
-    bubble: "✨ Weihnachtsdeals",
-    button: "Jetzt Shoppen",
-    addition: "Lerne mehr",
-    season: "christmas",
-  };
 
   return (
     <div className="flex flex-col min-h-screen w-full">
@@ -104,11 +93,11 @@ export default async function Home() {
         </div>
 
         <div className="w-full max-w-7xl px-4">
-          <Deal deal={dealBlack} />
+          <Deal deal={dataBlackfriday} />
         </div>
 
         <div className="w-full max-w-7xl px-4">
-          <Deal deal={dealChristmas} />
+          <Deal deal={dataChristmas} />
         </div>
 
         {/*
