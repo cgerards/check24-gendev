@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from pathlib import Path
+from typing import List
 import json
 
 app = FastAPI(title="Shopping Widget")
@@ -12,6 +13,17 @@ class DealResponse(BaseModel):
     button: str 
     addition: str 
     season: str
+    
+class BasicCarouselItem(BaseModel):
+    title: str
+    description: str
+    src: str
+    alt: str
+    
+class BasicCarouselResponse(BaseModel):
+    header: str
+    items: List[BasicCarouselItem]
+    
 
 
 def load_data(DATA_FILE: str) -> dict:
@@ -28,6 +40,9 @@ BLACKFRIDAY_DATA = load_data(BLACKFRIDAY_DATA_FILE)
 CHRISTMAS_DATA_FILE = Path(__file__).parent / "christmas.json"
 CHRISTMAS_DATA = load_data(CHRISTMAS_DATA_FILE)
 
+OFFERS_DATA_FILE = Path(__file__).parent / "offers.json"
+OFFERS_DATA = load_data(OFFERS_DATA_FILE)
+
 
 @app.get("/blackfriday", response_model=DealResponse)
 def get_blackfriday():
@@ -37,3 +52,8 @@ def get_blackfriday():
 @app.get("/christmas", response_model=DealResponse)
 def get_christmas():
     return CHRISTMAS_DATA
+
+
+@app.get("/offers", response_model=BasicCarouselResponse)
+def get_offers():
+    return OFFERS_DATA

@@ -11,7 +11,12 @@ import Footer from "@/components/Footer";
 import "./embla.css";
 
 import WidgetRenderer from "@/widgets/WidgetRenderer";
-import { Widget, BasicGridItem, DealItem } from "@/widgets/types";
+import {
+  Widget,
+  BasicGridItem,
+  DealItem,
+  BasicCarouselItem,
+} from "@/widgets/types";
 import FeaturedGrid from "@/widgets/FeaturedGrid";
 
 export default async function Home() {
@@ -31,13 +36,11 @@ export default async function Home() {
     items: BasicGridItem[];
   };
 
-
   const responseCityTravel = await fetch("http://127.0.0.1:8002/city");
   const dataCityTravel = (await responseCityTravel.json()) as {
     header: string;
     items: BasicGridItem[];
   };
-
 
   const responseBlackfriday = await fetch("http://127.0.0.1:8003/blackfriday");
   const dataBlackfriday = (await responseBlackfriday.json()) as DealItem;
@@ -45,21 +48,26 @@ export default async function Home() {
   const responseChristmas = await fetch("http://127.0.0.1:8003/christmas");
   const dataChristmas = (await responseChristmas.json()) as DealItem;
 
+  const responseOffers = await fetch("http://127.0.0.1:8003/offers");
+
+  const dataOffers = (await responseOffers.json()) as {
+    header: string;
+    items: BasicCarouselItem[];
+  };
 
   // console.log("HALLO");
 
   const SLIDES = Array.from(Array(6).keys());
-
-
 
   return (
     <div className="flex flex-col min-h-screen w-full">
       <CheckNavbar />
       <Hero />
       <main className="flex flex-col grow items-center gap-y-12 py-12">
-        <div className="w-full max-w-7xl px-4 py-5">
-          <Carousel />
+        <div className="w-full max-w-7xl px-4 py-5 overflow-visible">
+          <Carousel header={dataOffers.header} items={dataOffers.items} />
         </div>
+
         <div className="w-full max-w-7xl px-4">
           <CarWidget />
         </div>
@@ -85,7 +93,7 @@ export default async function Home() {
           />
         </div>
 
-         <div className="w-full max-w-7xl px-4">
+        <div className="w-full max-w-7xl px-4">
           <FeaturedGrid
             header={dataCityTravel.header}
             items={dataCityTravel.items}

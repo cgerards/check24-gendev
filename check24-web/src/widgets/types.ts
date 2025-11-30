@@ -28,3 +28,16 @@ export interface DealProps {
   deal: DealItem;
 }
 
+
+export interface BasicCarouselItem {
+  title: string;
+  description: string;
+  src: string;
+  alt: string;
+}
+
+export interface BasicCarouselProps {
+  header: string;
+  items: BasicCarouselItem[];
+}
+

@@ -1,0 +1,53 @@
+{
+  "header": "Neueste Shopping-Deals!",
+  "items": [
+    {
+      "title": "Apple iPad 11\" (2025) - 11. Generation",
+      "description": "Wi‑Fi, 128 GB, Silber - Liquid Retina Display, A16 Chip, True Tone",
+      "src": "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_151020109?x=536&y=402&format=jpg&quality=80&sp=yes&strip=yes&trim&ex=536&ey=402&align=center&resizesource&unsharp=1.5x1+0.7+0.02&cox=0&coy=0&cdx=536&cdy=402",
+      "alt": "iPad"
+    },
+    {
+      "title": "DYSON V8 ADVANCED",
+      "description": "Akku‑Hand‑ und Stielstaubsauger V8™, 425 W, beutellos - starke Saugleistung",
+      "src": "https://dyson-h.assetsadobe2.com/is/image/content/dam/dyson/products/cord-free-vacuums/sticks/dyson-v8-vacuums/Specification-image/285L_spec_IRSILNK_MTB.png?$responsive$&fmt=png-alpha&cropPathE=mobile&fit=stretch,1&wid=1328",
+      "alt": "Dyson"
+    },
+    {
+      "title": "Ninja Slushi FS301 Speiseeismaschine",
+      "description": "2,5 L für Sorbet, Slush Ice und Frozen Joghurt - spülmaschinengeeignete Teile",
+      "src": "https://m.media-amazon.com/images/I/81i7-o7KpOL._AC_UF894,1000_QL80_.jpg",
+      "alt": "Ninja Slushi"
+    },
+    {
+      "title": "AVM FRITZ! Repeater 1200 AX",
+      "description": "AX‑WLAN‑Repeater, Mesh‑fähig für stabilen Empfang in mehreren Räumen",
+      "src": "https://pics.computerbase.de/1/0/0/8/2/0-9905705af6a0e451/3-1080.d7e9332d.jpg",
+      "alt": "AVM FRITZ!"
+    },
+    {
+      "title": "Samsung QLED 4K Q60D - 65 Zoll",
+      "description": "Quantum Prozessor Lite 4K, 100 % Farbvolumen, Smart TV mit Tizen OS",
+      "src": "https://m.media-amazon.com/images/I/81vVpgVtzrL._AC_UF1000,1000_QL80_.jpg",
+      "alt": "Samsung QLED 4K"
+    },
+    {
+      "title": "Sony PlayStation 5 Slim - Digital Edition",
+      "description": "825 GB SSD, 4K‑Gaming, VR‑fähig in der kompakten Slim‑Variante",
+      "src": "https://m.media-amazon.com/images/I/51fM0CKG+HL.jpg",
+      "alt": "PlayStation 5 Slim"
+    },
+    {
+      "title": "Apple iPhone 17 Pro Max (256 GB)",
+      "description": "6.90\" Display, 5G, Dual SIM - Premium‑Smartphone in Cosmic Orange",
+      "src": "https://www.electronic4you.de/media/catalog/product/cache/2/image/1500x/9df78eab33525d08d6e5fb8d27136e95/2/7/273205.jpg",
+      "alt": "iPhone 17 Pro Max"
+    },
+    {
+      "title": "Apple MacBook Air 13.6\" - M4",
+      "description": "M4 CPU, 10‑Core CPU / 8‑Core GPU, 16 GB RAM, 256 GB SSD - ultraleichtes Notebook",
+      "src": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mba13-skyblue-select-202503?wid=892&hei=820&fmt=jpeg&qlt=90&.v=M2RyY09CWXlTQUp1KzEveHR6VXNxcTQ1bzN1SitYTU83Mm9wbk1xa1lWN2h4SGtCQ2R3aStVaDRhL2VUV1NjdkJkRlpCNVhYU3AwTldRQldlSnpRa0lIV0Fmdk9rUlVsZ3hnNXZ3K3lEVlk",
+      "alt": "MacBook Air 13.6 M4"
+    }
+  ]
+}

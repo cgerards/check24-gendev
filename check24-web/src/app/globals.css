@@ -161,22 +161,6 @@
     .heroswiper .swiper-button-prev {
       left: 25% !important;
     }
-
-    .carouselswiper .swiper-button-next {
-      right: 1rem !important;
-      top: 50% !important;
-      transform: translateY(-50%);
-      opacity: 0.9;
-      visibility: visible !important;
-    }
-
-    .carouselswiper .swiper-button-prev {
-      left: 1rem !important;
-      top: 50% !important;
-      transform: translateY(-50%);
-      opacity: 0.9;
-      visibility: visible !important;
-    }
   }
 
   .heroswiper .swiper-zoom-container > img {
@@ -190,12 +174,86 @@
     padding: 1rem !important;
   }
 
-  .carouselswiper .swiper-button-next {
+  /* Default: hide carousel buttons on small screens */
+  .carouselswiper .swiper-button-next,
+  .carouselswiper .swiper-button-prev {
     visibility: hidden;
   }
 
-  .carouselswiper .swiper-button-prev {
-    visibility: hidden;
+  /* Desktop: show bubble buttons with gray icon */
+  @media (min-width: 768px) {
+    .carouselswiper .swiper-button-next,
+    .carouselswiper .swiper-button-prev {
+      /* pull buttons slightly outside the card container */
+      right: -1px !important;
+      top: 50% !important;
+      transform: translateY(-50%);
+      opacity: 0.95;
+      visibility: visible !important;
+
+      z-index: 40;
+
+      /* bubble sizing */
+      width: 38px;
+      height: 38px;
+      padding: 0;
+      border-radius: 9999px;
+
+      /* bubble look */
+      background: rgba(255,255,255,0.96);
+      box-shadow: 0 6px 16px rgba(16,24,40,0.08);
+      border: 1px solid rgba(0,0,0,0.06);
+
+      /* center icon */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      /* icon color */
+      color: #6b7280; /* gray-500 */
+      transition: transform .15s ease, opacity .12s ease, background .12s ease;
+    }
+
+    .carouselswiper .swiper-button-prev {
+      left: -14px !important;
+      right: auto !important;
+    }
+
+    .carouselswiper .swiper-button-next:hover,
+    .carouselswiper .swiper-button-prev:hover {
+      transform: translateY(-50%) scale(1.04);
+      opacity: 1;
+      background: #ffffff;
+    }
+
+    /* ensure Swiper pseudo-icon matches color and size */
+    .carouselswiper .swiper-button-next::after,
+    .carouselswiper .swiper-button-prev::after {
+      font-size: 14px !important;
+      line-height: 1;
+      color: #6b7280 !important; /* gray-500 */
+    }
+
+    /* If Swiper uses inline SVG arrows, force their size and color */
+    .carouselswiper .swiper-button-next svg,
+    .carouselswiper .swiper-button-prev svg {
+      width: 16px !important;
+      height: 16px !important;
+      display: block;
+    }
+
+    .carouselswiper .swiper-button-next svg path,
+    .carouselswiper .swiper-button-prev svg path,
+    .carouselswiper .swiper-button-next svg circle,
+    .carouselswiper .swiper-button-prev svg circle {
+      fill: #6b7280 !important;
+      stroke: #6b7280 !important;
+    }
+
+    .carouselswiper .swiper-button-disabled {
+      opacity: 0.4 !important;
+      pointer-events: none;
+    }
   }
 }
 
