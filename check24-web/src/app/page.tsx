@@ -30,7 +30,15 @@ export default async function Home() {
     header: string;
     items: BasicGridItem[];
   };
-  console.log(dataNormalTravel);
+
+
+  const responseCityTravel = await fetch("http://127.0.0.1:8002/city");
+  const dataCityTravel = (await responseCityTravel.json()) as {
+    header: string;
+    items: BasicGridItem[];
+  };
+
+
   // console.log("HALLO");
 
   const SLIDES = Array.from(Array(6).keys());
@@ -85,6 +93,13 @@ export default async function Home() {
           <FeaturedGrid
             header={dataNormalTravel.header}
             items={dataNormalTravel.items}
+          />
+        </div>
+
+         <div className="w-full max-w-7xl px-4">
+          <FeaturedGrid
+            header={dataCityTravel.header}
+            items={dataCityTravel.items}
           />
         </div>
 

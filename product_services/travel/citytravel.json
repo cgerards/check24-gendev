@@ -1,0 +1,35 @@
+{
+  "header": "Die perfekte Städtereise!",
+  "items": [
+    {
+      "title": "London",
+      "subtitle": "7.121 Unterkünfte",
+      "src": "https://media.istockphoto.com/id/1347665170/de/foto/london-bei-sonnenuntergang.jpg?s=612x612&w=0&k=20&c=oB0zxCW_uvZt4t34Q9QblePN6LqjEfjWOaHcY0Ll-7A=",
+      "alt": "London"
+    },
+    {
+      "title": "Mailand",
+      "subtitle": "2.582 Unterkünfte",
+      "src": "https://media.istockphoto.com/id/966305776/de/foto/mailand.jpg?s=612x612&w=0&k=20&c=F1kRP8gHN-ZaK4GT-y2ObtE2Tx41oROCn1Hxp--hsHM=",
+      "alt": "Mailand"
+    },
+    {
+      "title": "Rom",
+      "subtitle": "8.588 Unterkünfte",
+      "src": "https://media.istockphoto.com/id/622806180/de/foto/kolosseum-in-rom-in-der-d%C3%A4mmerung.jpg?s=612x612&w=0&k=20&c=1Ne9DMJ4scLq6szuB63VcUuU5m7GQ3dspC6ptKeF9_s=",
+      "alt": "Rom"
+    },
+    {
+      "title": "Berlin",
+      "subtitle": "4.824 Unterkünfte",
+      "src": "https://media.istockphoto.com/id/2151686471/de/foto/historisches-zentrum-berlins-an-der-spree-zur-blauen-stunde.jpg?s=612x612&w=0&k=20&c=rYCQT02qE07nfMKWzOalfqYJ-z33gy7n6TaX0TAWbDA=",
+      "alt": "Berlin"
+    },
+    {
+      "title": "Paris",
+      "subtitle": "7.920 Unterkünfte",
+      "src": "https://media.istockphoto.com/id/2211711751/de/foto/eiffelturm-und-stra%C3%9Fen-von-paris-im-fr%C3%BChling-frankreich.jpg?s=612x612&w=0&k=20&c=zvRQBIUYz_lZiScPQ8AwqKlUsclVsh8JBFGJuPhAn58=",
+      "alt": "Paris"
+    }
+  ]
+}

@@ -16,6 +16,15 @@ app.add_middleware(
 )
 
 
+class BasicGridItem(BaseModel):
+    title: str
+    subtitle: str
+    src: str
+    alt: str
+    
+class BasicGridResponse(BaseModel):
+    header: str
+    items: List[BasicGridItem]
 
 
 def load_data(DATA_FILE: str) -> dict:
@@ -26,21 +35,17 @@ def load_data(DATA_FILE: str) -> dict:
         raise RuntimeError(f"Failed to read {DATA_FILE}: {exc}") from exc
 
 
+# LOAD ALL DATA
+
 SPORT_DATA_FILE = Path(__file__).parent / "sporttravel.json"
 SPORT_DATA = load_data(SPORT_DATA_FILE)
 
 NORMAL_DATA_FILE = Path(__file__).parent / "normaltravel.json"
 NORMAL_DATA = load_data(NORMAL_DATA_FILE)
 
-class BasicGridItem(BaseModel):
-    title: str
-    subtitle: str
-    src: str
-    alt: str
-    
-class BasicGridResponse(BaseModel):
-    header: str
-    items: List[BasicGridItem]
+CITY_DATA_FILE = Path(__file__).parent / "citytravel.json"
+CITY_DATA = load_data(CITY_DATA_FILE)
+
 
 
 
@@ -53,3 +58,7 @@ def get_sport():
 @app.get("/normal", response_model=BasicGridResponse)
 def get_normal():
     return NORMAL_DATA
+
+@app.get("/city", response_model=BasicGridResponse)
+def get_city():
+    return CITY_DATA

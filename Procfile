@@ -3,3 +3,4 @@ insurance: uvicorn product_services.insurance.main:app --host 0.0.0.0 --port 800
 travel: uvicorn product_services.travel.main:app --host 0.0.0.0 --port 8002
 shopping: uvicorn product_services.shopping.main:app --host 0.0.0.0 --port 8003
 contract: uvicorn product_services.contract.main:app --host 0.0.0.0 --port 8004
+image: uvicorn product_services.images.main:app --host 0.0.0.0 --port 8005
