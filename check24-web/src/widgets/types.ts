@@ -56,3 +56,19 @@ export interface DualProps {
   header: string;
   items: DualItem[];
 }
+
+
+export interface MinimalItem {
+  leftUpper: string;
+  leftBold: string;
+  leftLower: string;
+  rightUpperBold: string;
+  rightUpper: string;
+  rightLowerBig: string;
+  rightLower: string;
+}
+
+export interface MinimalProps {
+  header: string;
+  items: MinimalItem[];
+}

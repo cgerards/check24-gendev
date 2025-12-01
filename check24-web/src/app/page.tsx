@@ -17,8 +17,10 @@ import {
   DealItem,
   BasicCarouselItem,
   DualItem,
+  MinimalItem,
 } from "@/widgets/types";
 import FeaturedGrid from "@/widgets/FeaturedGrid";
+import MinimalCard from "@/widgets/MinimalCard";
 import DualContainer from "@/widgets/DualContainer";
 
 export default async function Home() {
@@ -63,6 +65,12 @@ export default async function Home() {
     items: DualItem[];
   };
 
+  const responseMobile = await fetch("http://127.0.0.1:8004/mobile");
+  const dataMobile = (await responseMobile.json()) as {
+    header: string;
+    items: MinimalItem[];
+  };
+
   // console.log("HALLO");
 
   const SLIDES = Array.from(Array(6).keys());
@@ -85,6 +93,10 @@ export default async function Home() {
           <TravelPack />
         </div>
         */}
+
+        <div className="w-full max-w-7xl px-4">
+          <MinimalCard header={dataMobile.header} items={dataMobile.items} />
+        </div>
 
         <div className="w-full max-w-7xl px-4">
           <DualContainer header={dataHome.header} items={dataHome.items} />

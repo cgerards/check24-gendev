@@ -1,17 +1,41 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from pathlib import Path
+from typing import List
+import json
 
 app = FastAPI(title="Contract Widget")
 
-class WidgetResponse(BaseModel):
-    widget: str
-    offers: list[str]
-    user_id: int
+    
+class MinimalItem(BaseModel):
+    leftUpper: str
+    leftBold: str
+    leftLower: str
+    rightUpperBold: str
+    rightUpper: str 
+    rightLowerBig: str 
+    rightLower: str
+    
+class MinimalResponse(BaseModel):
+    header: str
+    items: List[MinimalItem]
+    
 
-@app.get("/widget", response_model=WidgetResponse)
-def get_widget(user_id: int):
-    offers = [
-        "Car Insurance Premium - 20% off",
-        "Electric Vehicle Bonus Plan",
-    ]
-    return WidgetResponse(widget="Contract", offers=offers, user_id=user_id)
+
+def load_data(DATA_FILE: str) -> dict:
+    try:
+        with DATA_FILE.open("r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as exc:
+        raise RuntimeError(f"Failed to read {DATA_FILE}: {exc}") from exc
+
+
+MOBILE_DATA_FILE = Path(__file__).parent / "mobile.json"
+MOBILE_DATA = load_data(MOBILE_DATA_FILE)
+
+
+@app.get("/mobile", response_model=MinimalResponse)
+def get_mobile():
+    return MOBILE_DATA
+
+

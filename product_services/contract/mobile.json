@@ -1,0 +1,32 @@
+{
+  "header": "Handytarife vergleichen",
+  "items": [
+    {
+      "leftUpper": "ab",
+      "leftBold": "5 GB",
+      "leftLower": "Datenvolumen",
+      "rightUpperBold": "292 Tarife",
+      "rightUpper": "vergleichen",
+      "rightLowerBig": "ab 3,62 €",
+      "rightLower": "pro Monat"
+    },
+    {
+      "leftUpper": "ab",
+      "leftBold": "15 GB",
+      "leftLower": "Datenvolumen",
+      "rightUpperBold": "256 Tarife",
+      "rightUpper": "vergleichen",
+      "rightLowerBig": "ab 4,37 €",
+      "rightLower": "pro Monat"
+    },
+    {
+      "leftUpper": "ab",
+      "leftBold": "50 GB",
+      "leftLower": "Datenvolumen",
+      "rightUpperBold": "162 Tarife",
+      "rightUpper": "vergleichen",
+      "rightLowerBig": "ab 6,78 €",
+      "rightLower": "pro Monat"
+    }
+  ]
+}
