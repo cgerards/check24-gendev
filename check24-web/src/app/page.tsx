@@ -18,6 +18,7 @@ import {
   BasicCarouselItem,
 } from "@/widgets/types";
 import FeaturedGrid from "@/widgets/FeaturedGrid";
+import DualContainer from "@/widgets/DualContainer";
 
 export default async function Home() {
   const response = await fetch("http://127.0.0.1:8000/");
@@ -77,6 +78,10 @@ export default async function Home() {
           <TravelPack />
         </div>
         */}
+
+        <div className="w-full max-w-7xl px-4">
+          <DualContainer />
+        </div>
 
         <div className="w-full max-w-7xl px-4">
           <AlternativeCarousel slides={SLIDES} />
