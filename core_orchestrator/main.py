@@ -48,13 +48,23 @@ def load_data(DATA_FILE: str) -> dict:
 DEFAULT_DATA_FILE = Path(__file__).parent / "default.json"
 DEFAULT_DATA = load_data(DEFAULT_DATA_FILE)
 
-
-SECOND_WIDGETS = {"widgets": [{"widget_id": "mobile_minimal", "type": "minimal"}]}
+FIRST_DATA = load_data(Path(__file__).parent / "alice.json")
+SECOND_DATA = load_data(Path(__file__).parent / "bob.json")
+THIRD_DATA = load_data(Path(__file__).parent / "charlie.json")
+FOURTH_DATA = load_data(Path(__file__).parent / "dave.json")
 
 
 def get_widgets_for_user(user_id: Optional[str]) -> list:
-    if user_id == "2":
-        return SECOND_WIDGETS
+    # INSERT RECOMMENDER SYSTEM LOGIC HERE...
+    if user_id == "1":
+        return FIRST_DATA
+    elif user_id == "2":
+        return SECOND_DATA
+    elif user_id == "3":
+        return THIRD_DATA
+    elif user_id == "4":
+        return FOURTH_DATA
+    
     return DEFAULT_DATA
 
 @app.get("/widgetlist/")

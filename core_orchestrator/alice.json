@@ -1,0 +1,15 @@
+{
+  "widgets": [
+    { "widget_id": "car_widget", "type": "car_widget" },
+    { "widget_id": "travel_carousel", "type": "alternative_carousel" },
+    { "widget_id": "christmas_banner", "type": "deal" },
+    { "widget_id": "shopping_carousel", "type": "carousel" },
+    { "widget_id": "home_widget", "type": "dual" },
+    { "widget_id": "credit_minimal", "type": "minimal" },
+    { "widget_id": "sportTravel_grid", "type": "basic_grid" },
+    { "widget_id": "mobile_minimal", "type": "minimal" },
+    { "widget_id": "normalTravel_featured", "type": "featured_grid" },
+    { "widget_id": "blackfriday_banner", "type": "deal" },
+    { "widget_id": "cityTravel_featured", "type": "featured_grid" }
+  ]
+}
