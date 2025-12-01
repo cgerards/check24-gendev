@@ -70,5 +70,6 @@ export interface MinimalItem {
 
 export interface MinimalProps {
   header: string;
+  type: "mobile" | "loan" | string;
   items: MinimalItem[];
 }

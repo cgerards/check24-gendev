@@ -1,0 +1,33 @@
+{
+  "header": "Kredite von über 300 Banken vergleichen",
+  "type": "loan",
+  "items": [
+    {
+      "leftUpper": "",
+      "leftBold": "10.000 €",
+      "leftLower": "Kreditsumme",
+      "rightUpperBold": "277 Banken",
+      "rightUpper": "",
+      "rightLowerBig": "ab 285,88 €",
+      "rightLower": "pro Monat für 36 Monate *"
+    },
+    {
+      "leftUpper": "",
+      "leftBold": "20.000 €",
+      "leftLower": "Kreditsumme",
+      "rightUpperBold": "362 Banken",
+      "rightUpper": "",
+      "rightLowerBig": "ab 432,80 €",
+      "rightLower": "pro Monat für 48 Monate *"
+    },
+    {
+      "leftUpper": "",
+      "leftBold": "50.000 €",
+      "leftLower": "Kreditsumme",
+      "rightUpperBold": "412 Banken",
+      "rightUpper": "",
+      "rightLowerBig": "ab 635,59 €",
+      "rightLower": "pro Monat für 84 Monate *"
+    }
+  ]
+}

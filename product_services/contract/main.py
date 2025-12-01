@@ -18,6 +18,7 @@ class MinimalItem(BaseModel):
     
 class MinimalResponse(BaseModel):
     header: str
+    type: str
     items: List[MinimalItem]
     
 
@@ -33,9 +34,16 @@ def load_data(DATA_FILE: str) -> dict:
 MOBILE_DATA_FILE = Path(__file__).parent / "mobile.json"
 MOBILE_DATA = load_data(MOBILE_DATA_FILE)
 
+LOAN_DATA_FILE = Path(__file__).parent / "loan.json"
+LOAN_DATA = load_data(LOAN_DATA_FILE)
+
 
 @app.get("/mobile", response_model=MinimalResponse)
 def get_mobile():
     return MOBILE_DATA
+
+@app.get("/loan", response_model=MinimalResponse)
+def get_loan():
+    return LOAN_DATA
 
 

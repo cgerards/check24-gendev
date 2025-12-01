@@ -18,6 +18,7 @@ import {
   BasicCarouselItem,
   DualItem,
   MinimalItem,
+  MinimalProps,
 } from "@/widgets/types";
 import FeaturedGrid from "@/widgets/FeaturedGrid";
 import MinimalCard from "@/widgets/MinimalCard";
@@ -68,6 +69,14 @@ export default async function Home() {
   const responseMobile = await fetch("http://127.0.0.1:8004/mobile");
   const dataMobile = (await responseMobile.json()) as {
     header: string;
+    type: string;
+    items: MinimalItem[];
+  };
+
+  const responseLoan = await fetch("http://127.0.0.1:8004/loan");
+  const dataLoan = (await responseLoan.json()) as {
+    header: string;
+    type: string;
     items: MinimalItem[];
   };
 
@@ -95,7 +104,19 @@ export default async function Home() {
         */}
 
         <div className="w-full max-w-7xl px-4">
-          <MinimalCard header={dataMobile.header} items={dataMobile.items} />
+          <MinimalCard
+            header={dataMobile.header}
+            type={dataMobile.type}
+            items={dataMobile.items}
+          />
+        </div>
+
+        <div className="w-full max-w-7xl px-4">
+          <MinimalCard
+            header={dataLoan.header}
+            type={dataLoan.type}
+            items={dataLoan.items}
+          />
         </div>
 
         <div className="w-full max-w-7xl px-4">
