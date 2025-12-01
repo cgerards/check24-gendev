@@ -52,7 +52,8 @@ export default function Login() {
                   Alice
                 </label>
                 <div className="flex items-center gap-1">
-                  <Tag text="car-insurance" color="red" />
+                  <Tag text="car-interested" color="red" />
+                  <Tag text="travel-soon" color="yellow" />
                 </div>
               </div>
 
@@ -71,8 +72,8 @@ export default function Login() {
                   Bob
                 </label>
                 <div className="flex items-center gap-1">
-                  <Tag text="internet-contract" color="blue" />
-                  <Tag text="mobile-contract" color="blue" />
+                  <Tag text="cityTravel-interested" color="yellow" />
+                  <Tag text="normalTravel-interested" color="yellow" />
                 </div>
               </div>
 
@@ -90,9 +91,9 @@ export default function Login() {
                   Charlie
                 </label>
                 <div className="flex items-center gap-1">
-                  <Tag text="flight" color="yellow" />
-                  <Tag text="hotel" color="yellow" />
-                  <Tag text="internet-contract" color="blue" />
+                  <Tag text="shopping" color="blue" />
+                  <Tag text="mobile" color="blue" />
+                  <Tag text="blackfriday/christmas" color="blue" />
                 </div>
               </div>
 
@@ -112,6 +113,7 @@ export default function Login() {
                 <div className="flex items-center gap-1">
                   <Tag text="electricity" color="green" />
                   <Tag text="gas" color="green" />
+                  <Tag text="loan" color="blue" />
                 </div>
               </div>
 

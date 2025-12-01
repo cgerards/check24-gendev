@@ -8,8 +8,6 @@
     { "widget_id": "credit_minimal", "type": "minimal" },
     { "widget_id": "sportTravel_grid", "type": "basic_grid" },
     { "widget_id": "mobile_minimal", "type": "minimal" },
-    { "widget_id": "normalTravel_featured", "type": "featured_grid" },
-    { "widget_id": "blackfriday_banner", "type": "deal" },
-    { "widget_id": "cityTravel_featured", "type": "featured_grid" }
+    { "widget_id": "blackfriday_banner", "type": "deal" }
   ]
 }
