@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-
+from typing import Optional
 
 app = FastAPI()
 
@@ -21,27 +21,24 @@ const ENDPOINT_MAP: Record<string, string> = {
 
 """
 
-@app.get("/")
-async def root():
-        
-    
-    return {
-        "widgets": [
-            {
-                "widget_id": "shopping_carousel",
-                "type": "carousel"
-            },
-            {
-                "widget_id": "mobile_minimal",
-                "type": "minimal"
-            },
-            {
-                "widget_id": "car_widget",
-                "type": "car_widget"
-            },
-            {
-                "widget_id": "travel_carousel",
-                "type": "alternative_carousel"
-            }
-        ]
-    }
+
+DEFAULT_WIDGETS = {"widgets":[{"widget_id": "shopping_carousel", "type": "carousel"}]}
+
+SECOND_WIDGETS = {"widgets": [{"widget_id": "mobile_minimal", "type": "minimal"}]}
+
+
+def get_widgets_for_user(user_id: Optional[str]) -> list:
+    if user_id == "2":
+        return SECOND_WIDGETS
+    return DEFAULT_WIDGETS
+
+
+@app.get("/widgetlist/")
+async def get_widgetlist(user_id: Optional[str]):
+
+    if not user_id:
+        return DEFAULT_WIDGETS
+
+    widgets = get_widgets_for_user(user_id)
+
+    return widgets
