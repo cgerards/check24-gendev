@@ -1,5 +1,6 @@
 export interface Widget {
-  type: "carousel" | "featured_grid";
+  widget_id: string;
+  type: string;
   data: any;
 }
 
