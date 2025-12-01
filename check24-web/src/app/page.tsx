@@ -1,35 +1,17 @@
-import Image from "next/image";
 import CheckNavbar from "../components/Navbar";
-import Carousel from "../widgets/Carousel";
-import CarWidget from "@/widgets/CarWidget";
-import TravelPack from "@/widgets/TravelPack";
-import AlternativeCarousel from "@/widgets/AlternativeCarousel";
-import BasicGrid from "@/widgets/BasicGrid";
-import Deal from "@/widgets/Deal";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import "./embla.css";
 
 import WidgetRenderer from "@/widgets/WidgetRenderer";
-import {
-  Widget,
-  BasicGridItem,
-  DealItem,
-  BasicCarouselItem,
-  DualItem,
-  MinimalItem,
-  MinimalProps,
-} from "@/widgets/types";
-import FeaturedGrid from "@/widgets/FeaturedGrid";
-import MinimalCard from "@/widgets/MinimalCard";
-import DualContainer from "@/widgets/DualContainer";
 
 import { loadWidgetsDataFor } from "@/lib/widgetsData";
 
-
 export default async function Home() {
-  const response = await fetch("http://127.0.0.1:8000/");
-  const orchestrator = (await response.json()) as { widgets: { widget_id: string; type: string }[] };
+  const response = await fetch("http://127.0.0.1:8000/widgetlist/?user_id=1");
+  const orchestrator = (await response.json()) as {
+    widgets: { widget_id: string; type: string }[];
+  };
 
 
   const widgetDataMap = await loadWidgetsDataFor(orchestrator.widgets);
@@ -40,8 +22,7 @@ export default async function Home() {
     data: widgetDataMap[w.widget_id],
   }));
 
-  console.log(widgetsToRender)
-
+  console.log(widgetsToRender);
 
   return (
     <div className="flex flex-col min-h-screen w-full">

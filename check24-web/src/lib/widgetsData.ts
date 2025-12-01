@@ -36,6 +36,8 @@ async function fetchJson(url: string) {
 export async function loadWidgetsDataFor(
   widgets: OrchestratorWidget[]
 ): Promise<Record<string, any>> {
+
+    
   const widgetToUrl = widgets.reduce<Record<string, string>>((acc, w) => {
     const url = ENDPOINT_MAP[w.widget_id];
     if (url) acc[w.widget_id] = url;
