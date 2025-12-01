@@ -1,0 +1,21 @@
+{
+  "header": "Empfohlen für ihr Eigenheim!",
+  "items": [
+    {
+      "title": "Hausratversicherung",
+      "description": "Schutz für Möbel, Elektronik und persönliche Gegenstände bei Einbruch, Feuer oder Leitungswasserschäden.",
+      "average": "ab ~3,90 € pro Monat",
+      "note": "Viele Tarife bieten Rabatte bei längerer Vertragslaufzeit oder|Bündelung mit anderen Versicherungen.",
+      "src": "https://media.istockphoto.com/id/928087944/de/foto/menschliche-hand-stoppen-die-holzbl%C3%B6cke-fallen.jpg?s=612x612&w=0&k=20&c=f4RfD0h5V8J2izizpCxFLnRQginNF3tbSvL6_FTdr3U=",
+      "alt": "Hausratversicherung"
+    },
+    {
+      "title": "Strom &amp; Gastarife",
+      "description": "Vergleich aktueller Strom- und Gaspreise und mögliche Einsparpotenziale.",
+      "average": "Ø Strom: 21,44 € / Monat |Ø Gas: 45,00 € / Monat",
+      "note": "Konkrete Kosten hängen von Verbrauch und Postleitzahl ab.",
+      "src": "https://media.istockphoto.com/id/1436151207/de/foto/kosten-der-energieversorgung.jpg?s=612x612&w=0&k=20&c=w6VY_edWQGofTHFCODdWjWykyStSt2FNOyWjxvTpoS0=",
+      "alt": "Strom und Gas"
+    }
+  ]
+}

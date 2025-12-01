@@ -16,6 +16,7 @@ import {
   BasicGridItem,
   DealItem,
   BasicCarouselItem,
+  DualItem,
 } from "@/widgets/types";
 import FeaturedGrid from "@/widgets/FeaturedGrid";
 import DualContainer from "@/widgets/DualContainer";
@@ -56,6 +57,12 @@ export default async function Home() {
     items: BasicCarouselItem[];
   };
 
+  const responseHome = await fetch("http://127.0.0.1:8001/home");
+  const dataHome = (await responseHome.json()) as {
+    header: string;
+    items: DualItem[];
+  };
+
   // console.log("HALLO");
 
   const SLIDES = Array.from(Array(6).keys());
@@ -80,7 +87,7 @@ export default async function Home() {
         */}
 
         <div className="w-full max-w-7xl px-4">
-          <DualContainer />
+          <DualContainer header={dataHome.header} items={dataHome.items} />
         </div>
 
         <div className="w-full max-w-7xl px-4">

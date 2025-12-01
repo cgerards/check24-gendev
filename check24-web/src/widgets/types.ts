@@ -41,3 +41,18 @@ export interface BasicCarouselProps {
   items: BasicCarouselItem[];
 }
 
+
+
+export interface DualItem {
+  title: string;
+  description: string;
+  average: string;
+  note: string;
+  src: string;
+  alt: string;
+}
+
+export interface DualProps {
+  header: string;
+  items: DualItem[];
+}

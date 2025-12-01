@@ -1,18 +1,33 @@
 import Image from "next/image";
+import { DualProps } from "./types";
 
-export default function DualContainer() {
-  const displayItems = [
-    {
-      src: "https://media.istockphoto.com/id/928087944/de/foto/menschliche-hand-stoppen-die-holzbl%C3%B6cke-fallen.jpg?s=612x612&w=0&k=20&c=f4RfD0h5V8J2izizpCxFLnRQginNF3tbSvL6_FTdr3U=",
-      alt: "Placeholder 1",
-    },
-    {
-      src: "https://media.istockphoto.com/id/1436151207/de/foto/kosten-der-energieversorgung.jpg?s=612x612&w=0&k=20&c=w6VY_edWQGofTHFCODdWjWykyStSt2FNOyWjxvTpoS0=",
-      alt: "Placeholder 2",
-    },
-  ];
+export default function DualContainer({ header, items }: DualProps) {
+  const displayItems = items;
 
-  const header = "Test";
+  function formatDescription(text: string) {
+    const lines = text.split("|");
+
+    return lines.flatMap((line, lineIndex) => {
+      const parts = line.split(/><(.*?)></);
+
+      const nodes = parts.map((part, i) =>
+        i % 2 === 1 ? (
+          <span
+            key={`${lineIndex}-em-${i}`}
+            className="font-semibold text-amber-300"
+          >
+            {part}
+          </span>
+        ) : (
+          part
+        )
+      );
+
+      if (lineIndex < lines.length - 1)
+        return [...nodes, <br key={`br-${lineIndex}`} />];
+      return nodes;
+    });
+  }
 
   return (
     <div className="max-w-7xl mx-auto p-1 relative overflow-visible">
@@ -33,18 +48,18 @@ export default function DualContainer() {
             className="w-full sm:w-1/2 h-48 sm:h-auto object-cover"
           />
           <div className="flex flex-col p-5 justify-center grow">
-            <h2 className="font-bold">Hausratversicherung</h2>
+            <h2 className="font-bold">{displayItems[0].title}</h2>
             <p className="text-sm text-gray-600 mt-2">
-              Schutz für Möbel, Elektronik und persönliche Gegenstände bei
-              Einbruch, Feuer oder Leitungswasserschäden.
+              {formatDescription(displayItems[0].description)}
             </p>
 
             <div className="mt-4 text-sm text-gray-700">
               <div className="mt-3">
-                <p className="text-lg font-semibold">ab ~3,90 € pro Monat</p>
+                <p className="text-lg font-semibold">
+                  {formatDescription(displayItems[0].average)}
+                </p>
                 <p className="text-xs text-gray-500 mt-1">
-                  Viele Tarife bieten Rabatte bei längerer Vertragslaufzeit oder
-                  Bündelung mit anderen Versicherungen.
+                  {formatDescription(displayItems[0].note)}
                 </p>
               </div>
             </div>
@@ -62,20 +77,18 @@ export default function DualContainer() {
 
           {/* SECOND */}
           <div className="flex flex-col p-5 justify-center grow">
-            <h2 className="font-bold">Strom &amp; Gastarife</h2>
+            <h2 className="font-bold">{displayItems[1].title}</h2>
             <p className="text-sm text-gray-600 mt-2">
-              Vergleich aktueller Strom- und Gaspreise und mögliche
-              Einsparpotenziale.
+              {formatDescription(displayItems[1].description)}
             </p>
 
             <div className="mt-4 text-sm text-gray-700">
               <div className="mt-3">
                 <p className="text-lg font-semibold">
-                  Ø Strom: 21,44 € / Monat
+                  {formatDescription(displayItems[1].average)}
                 </p>
-                <p className="text-lg font-semibold">Ø Gas: 45,00 € / Monat</p>
                 <p className="text-xs text-gray-500 mt-1">
-                  Konkrete Kosten hängen von Verbrauch und Postleitzahl ab.
+                  {formatDescription(displayItems[1].note)}
                 </p>
               </div>
             </div>

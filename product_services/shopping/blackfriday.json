@@ -1,9 +1,8 @@
 {
-    "title": "Black Friday Deals",
-    "description":
-      "Nur noch für kurze Zeit: Angebote auf Reisen, Autovermietungen und Versicherungen mit bis zu [ 50% Rabatt]. Sichere Dir jetzt den Deal!",
-    "bubble": "✨ Black Friday",
-    "button": "Jetzt Shoppen",
-    "addition": "Lerne mehr",
-    "season": "blackfriday"
-  }
+  "title": "Black Friday Deals",
+  "description": "Nur noch für kurze Zeit: Angebote auf Reisen, Autovermietungen und Versicherungen mit bis zu [ 50% Rabatt]. Sichere Dir jetzt den Deal!",
+  "bubble": "✨ Black Friday",
+  "button": "Jetzt Shoppen",
+  "addition": "Lerne mehr",
+  "season": "blackfriday"
+}
