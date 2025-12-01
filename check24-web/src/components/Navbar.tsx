@@ -47,7 +47,6 @@ function CheckNavbar() {
             </Link>
           </div>
         </div>
-        
       </div>
     </nav>
   );

@@ -42,7 +42,9 @@ export default function MinimalCard({ header, type, items }: MinimalProps) {
                 <span className="text-2xl">
                   {displayItems[index].rightLowerBig}
                 </span>
-                <span className="text-xs">{displayItems[index].rightLower}</span>
+                <span className="text-xs">
+                  {displayItems[index].rightLower}
+                </span>
               </span>
             </span>
           </div>

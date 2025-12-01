@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Radio from "../components/Radio";
-import CustomDatePicker from "../components/DatePicker";
-import DataPlanSelector from "@/components/DataPlanSelector";
+import Radio from "../components/ui/Radio";
+import CustomDatePicker from "../components/ui/DatePicker";
+import DataPlanSelector from "@/components/ui/DataPlanSelector";
 
 import location from "../../public/location.svg";
 

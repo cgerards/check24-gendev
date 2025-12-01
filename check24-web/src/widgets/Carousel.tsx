@@ -104,8 +104,12 @@ export default function Carousel({ header, items }: BasicCarouselProps) {
                 className="aspect-6/5 object-cover z-0"
               />
               <div className="p-4">
-                <h3 className="text-lg font-bold">{displayItems[index].title}</h3>
-                <p className="text-gray-600 mt-2">{displayItems[index].description}</p>
+                <h3 className="text-lg font-bold">
+                  {displayItems[index].title}
+                </h3>
+                <p className="text-gray-600 mt-2">
+                  {displayItems[index].description}
+                </p>
               </div>
             </div>
           </SwiperSlide>

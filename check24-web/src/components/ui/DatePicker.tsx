@@ -5,7 +5,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { createPortal } from "react-dom";
 import Image from "next/image";
-import calendarIcon from "../../public/calendar.svg";
+import calendarIcon from "../../../public/calendar.svg";
 
 interface DatePickerProps {
   placeholder: string;

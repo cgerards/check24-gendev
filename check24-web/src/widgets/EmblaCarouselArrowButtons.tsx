@@ -1,60 +1,72 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from "react";
 
-export const usePrevNextButtons = (emblaApi : any) => {
-  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true)
-  const [nextBtnDisabled, setNextBtnDisabled] = useState(true)
+export const usePrevNextButtons = (emblaApi: any) => {
+  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
+  const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
 
   const onPrevButtonClick = useCallback(() => {
-    if (!emblaApi) return
+    if (!emblaApi) return;
     try {
-      const snaps = emblaApi.scrollSnapList()
-      const selected = emblaApi.selectedScrollSnap()
+      const snaps = emblaApi.scrollSnapList();
+      const selected = emblaApi.selectedScrollSnap();
       // If looping is enabled, wrap-around; otherwise clamp
-      const loop = !!(emblaApi.options && (emblaApi.options.loop || (typeof emblaApi.options === 'function' && emblaApi.options().loop)))
-      const prevIndex = loop ? (selected - 1 + snaps.length) % snaps.length : Math.max(0, selected - 1)
-      emblaApi.scrollTo(prevIndex)
+      const loop = !!(
+        emblaApi.options &&
+        (emblaApi.options.loop ||
+          (typeof emblaApi.options === "function" && emblaApi.options().loop))
+      );
+      const prevIndex = loop
+        ? (selected - 1 + snaps.length) % snaps.length
+        : Math.max(0, selected - 1);
+      emblaApi.scrollTo(prevIndex);
     } catch (e) {
-      emblaApi.scrollPrev()
+      emblaApi.scrollPrev();
     }
-  }, [emblaApi])
+  }, [emblaApi]);
 
   const onNextButtonClick = useCallback(() => {
-    if (!emblaApi) return
+    if (!emblaApi) return;
     try {
-      const snaps = emblaApi.scrollSnapList()
-      const selected = emblaApi.selectedScrollSnap()
-      const loop = !!(emblaApi.options && (emblaApi.options.loop || (typeof emblaApi.options === 'function' && emblaApi.options().loop)))
-      const nextIndex = loop ? (selected + 1) % snaps.length : Math.min(snaps.length - 1, selected + 1)
-      emblaApi.scrollTo(nextIndex)
+      const snaps = emblaApi.scrollSnapList();
+      const selected = emblaApi.selectedScrollSnap();
+      const loop = !!(
+        emblaApi.options &&
+        (emblaApi.options.loop ||
+          (typeof emblaApi.options === "function" && emblaApi.options().loop))
+      );
+      const nextIndex = loop
+        ? (selected + 1) % snaps.length
+        : Math.min(snaps.length - 1, selected + 1);
+      emblaApi.scrollTo(nextIndex);
     } catch (e) {
-      emblaApi.scrollNext()
+      emblaApi.scrollNext();
     }
-  }, [emblaApi])
+  }, [emblaApi]);
 
-  const onSelect = useCallback((emblaApi : any) => {
-    setPrevBtnDisabled(!emblaApi.canScrollPrev())
-    setNextBtnDisabled(!emblaApi.canScrollNext())
-  }, [])
+  const onSelect = useCallback((emblaApi: any) => {
+    setPrevBtnDisabled(!emblaApi.canScrollPrev());
+    setNextBtnDisabled(!emblaApi.canScrollNext());
+  }, []);
 
   useEffect(() => {
-    if (!emblaApi) return
+    if (!emblaApi) return;
 
-    onSelect(emblaApi)
-    emblaApi.on('reInit', onSelect).on('select', onSelect)
-  }, [emblaApi, onSelect])
+    onSelect(emblaApi);
+    emblaApi.on("reInit", onSelect).on("select", onSelect);
+  }, [emblaApi, onSelect]);
 
   return {
     prevBtnDisabled,
     nextBtnDisabled,
     onPrevButtonClick,
-    onNextButtonClick
-  }
-}
+    onNextButtonClick,
+  };
+};
 
-export const PrevButton = (props : any) => {
-  const { children, ...restProps } = props
+export const PrevButton = (props: any) => {
+  const { children, ...restProps } = props;
 
   return (
     <button
@@ -70,11 +82,11 @@ export const PrevButton = (props : any) => {
       </svg>
       {children}
     </button>
-  )
-}
+  );
+};
 
-export const NextButton = (props : any) => {
-  const { children, ...restProps } = props
+export const NextButton = (props: any) => {
+  const { children, ...restProps } = props;
 
   return (
     <button
@@ -90,5 +102,5 @@ export const NextButton = (props : any) => {
       </svg>
       {children}
     </button>
-  )
-}
+  );
+};

@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import Cookies from "js-cookie";
-import MySwitch from "@/components/MySwitch";
+import MySwitch from "@/components/ui/MySwitch";
 import MiniNavbar from "@/components/MiniNavbar";
 
-import Tag from "@/components/Tag";
+import Tag from "@/components/ui/Tag";
 
 export default function Login() {
   const [selectedUser, setSelectedUser] = useState(() => {
@@ -63,6 +63,7 @@ export default function Login() {
               />
             </div>
 
+
             {/* 2 - Bob */}
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -71,6 +72,7 @@ export default function Login() {
                 </label>
                 <div className="flex items-center gap-1">
                   <Tag text="internet-contract" color="blue" />
+                  <Tag text="mobile-contract" color="blue" />
                 </div>
               </div>
 
@@ -88,8 +90,9 @@ export default function Login() {
                   Charlie
                 </label>
                 <div className="flex items-center gap-1">
+                  <Tag text="flight" color="yellow" />
+                  <Tag text="hotel" color="yellow" />
                   <Tag text="internet-contract" color="blue" />
-                  <Tag text="mobile-contract" color="blue" />
                 </div>
               </div>
 
@@ -107,45 +110,6 @@ export default function Login() {
                   Dave
                 </label>
                 <div className="flex items-center gap-1">
-                  <Tag text="flight" color="yellow" />
-                  <Tag text="hotel" color="yellow" />
-                  <Tag text="internet-contract" color="blue" />
-                </div>
-              </div>
-
-              <MySwitch
-                label=""
-                checked={selectedUser === 4}
-                onChange={() => handleUserSelect(4)}
-              />
-            </div>
-
-            {/* 5 - Eve */}
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <label htmlFor="user-5" className="font-semibold text-gray-700">
-                  Eve
-                </label>
-                <div className="flex items-center gap-1">
-                  <Tag text="electricity" color="green" />
-                  <Tag text="home-insurance" color="red" />
-                </div>
-              </div>
-
-              <MySwitch
-                label=""
-                checked={selectedUser === 5}
-                onChange={() => handleUserSelect(5)}
-              />
-            </div>
-
-            {/* 6 - Frank */}
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <label htmlFor="user-5" className="font-semibold text-gray-700">
-                  Frank
-                </label>
-                <div className="flex items-center gap-1">
                   <Tag text="electricity" color="green" />
                   <Tag text="gas" color="green" />
                 </div>
@@ -153,8 +117,8 @@ export default function Login() {
 
               <MySwitch
                 label=""
-                checked={selectedUser === 6}
-                onChange={() => handleUserSelect(6)}
+                checked={selectedUser === 4}
+                onChange={() => handleUserSelect(4)}
               />
             </div>
 

@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Radio from "../components/Radio";
+import Radio from "../components/ui/Radio";
 
-import ruler from "../../public/ruler.svg"
+import ruler from "../../public/ruler.svg";
 
 export default function CarWidget() {
   const displayItems = [
@@ -18,10 +18,14 @@ export default function CarWidget() {
   ];
 
   const title = "Alles rund um Ihr Auto!";
-  
+
   return (
     <div className="max-w-7xl mx-auto p-1">
-      {title && <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-4">{title}</h2>}
+      {title && (
+        <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-4">
+          {title}
+        </h2>
+      )}
       <div className="flex flex-col sm:flex-row gap-3 p-1">
         {/* INSURANCE */}
         <div className="shadow-md bg-neutral-50 rounded-2xl flex flex-col sm:flex-row overflow-hidden relative">
@@ -97,9 +101,17 @@ export default function CarWidget() {
 
             <div className="relative mb-4">
               <div className="absolute inset-y-0 left-0 flex pl-2 items-center">
-                <Image src={ruler} alt="Reifengröße" className="text-gray-500 h-4 w-4"></Image>
+                <Image
+                  src={ruler}
+                  alt="Reifengröße"
+                  className="text-gray-500 h-4 w-4"
+                ></Image>
               </div>
-              <input className="pl-8 bg-white border border-default-medium text-heading text-sm rounded-md focus:ring-brand focus:border-brand block w-full px-3 shadow-xs placeholder:text-body py-0.5" placeholder="Reifengröße angeben" required />
+              <input
+                className="pl-8 bg-white border border-default-medium text-heading text-sm rounded-md focus:ring-brand focus:border-brand block w-full px-3 shadow-xs placeholder:text-body py-0.5"
+                placeholder="Reifengröße angeben"
+                required
+              />
             </div>
 
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">

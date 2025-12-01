@@ -1,13 +1,12 @@
 "use client";
 
-
 import Carousel from "./Carousel";
 import FeaturedGrid from "./FeaturedGrid";
 import { Widget } from "./types";
 
 const widgetMap = {
   carousel: Carousel,
-  featured_grid: FeaturedGrid
+  featured_grid: FeaturedGrid,
 };
 
 export default function WidgetRenderer({ widget }: { widget: Widget }) {
@@ -17,8 +16,8 @@ export default function WidgetRenderer({ widget }: { widget: Widget }) {
     return null;
   }
 
-  console.log("test")
-  console.log(widget.data)
+  console.log("test");
+  console.log(widget.data);
 
   return <Component {...widget.data} />;
 }

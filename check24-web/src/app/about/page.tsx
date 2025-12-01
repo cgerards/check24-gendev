@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import MySwitch from "@/components/MySwitch";
+import MySwitch from "@/components/ui/MySwitch";
 import MiniNavbar from "@/components/MiniNavbar";
 
 export default function About() {

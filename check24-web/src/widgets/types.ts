@@ -28,7 +28,6 @@ export interface DealProps {
   deal: DealItem;
 }
 
-
 export interface BasicCarouselItem {
   title: string;
   description: string;
@@ -40,8 +39,6 @@ export interface BasicCarouselProps {
   header: string;
   items: BasicCarouselItem[];
 }
-
-
 
 export interface DualItem {
   title: string;
@@ -56,7 +53,6 @@ export interface DualProps {
   header: string;
   items: DualItem[];
 }
-
 
 export interface MinimalItem {
   leftUpper: string;

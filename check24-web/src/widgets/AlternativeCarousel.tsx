@@ -2,11 +2,9 @@
 
 import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
 
-
 import Esim from "@/components/Esim";
 import RentalCar from "@/components/RentalCar";
 import TravelInsurance from "@/components/TravelInsurance";
-
 
 import {
   PrevButton,
@@ -34,12 +32,15 @@ const AlternativeCarousel = (props: any) => {
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
 
-
   const title = "Unsere Services für Ihre bevorstehende Reise";
 
   return (
     <section className="embla">
-      {title && <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-4">{title}</h2>}
+      {title && (
+        <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-4">
+          {title}
+        </h2>
+      )}
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container p-1">
           <div className="embla__slide">

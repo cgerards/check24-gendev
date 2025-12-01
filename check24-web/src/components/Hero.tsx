@@ -18,57 +18,57 @@ const placeholders = [
 
 export default function Hero() {
   return (
-      <Swiper
-        navigation={true}
-        autoplay={{
-          delay: 7500,
-          disableOnInteraction: false,
-        }}
-        loop={true}
-        slidesPerView={1}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="heroswiper h-[55vh] overflow-hidden"
-      >
-        <SwiperSlide>
-          <Image
-            src={placeholders[0]}
-            alt=""
-            width={1920}
-            height={500}
-            className="w-full h-full object-cover"
-            priority={true}
-          />
-        </SwiperSlide>
+    <Swiper
+      navigation={true}
+      autoplay={{
+        delay: 7500,
+        disableOnInteraction: false,
+      }}
+      loop={true}
+      slidesPerView={1}
+      modules={[Autoplay, Pagination, Navigation]}
+      className="heroswiper h-[55vh] overflow-hidden"
+    >
+      <SwiperSlide>
+        <Image
+          src={placeholders[0]}
+          alt=""
+          width={1920}
+          height={500}
+          className="w-full h-full object-cover"
+          priority={true}
+        />
+      </SwiperSlide>
 
-        <SwiperSlide>
-          <Image
-            src={placeholders[1]}
-            alt=""
-            width={1920}
-            height={500}
-            className="w-full h-full object-cover"
-          />
-        </SwiperSlide>
+      <SwiperSlide>
+        <Image
+          src={placeholders[1]}
+          alt=""
+          width={1920}
+          height={500}
+          className="w-full h-full object-cover"
+        />
+      </SwiperSlide>
 
-        <SwiperSlide>
-          <Image
-            src={placeholders[2]}
-            alt=""
-            width={1920}
-            height={500}
-            className="w-full h-full object-cover"
-          />
-        </SwiperSlide>
+      <SwiperSlide>
+        <Image
+          src={placeholders[2]}
+          alt=""
+          width={1920}
+          height={500}
+          className="w-full h-full object-cover"
+        />
+      </SwiperSlide>
 
-        <SwiperSlide>
-          <Image
-            src={placeholders[3]}
-            alt=""
-            width={1920}
-            height={500}
-            className="w-full h-full object-cover"
-          />
-        </SwiperSlide>
-      </Swiper>
+      <SwiperSlide>
+        <Image
+          src={placeholders[3]}
+          alt=""
+          width={1920}
+          height={500}
+          className="w-full h-full object-cover"
+        />
+      </SwiperSlide>
+    </Swiper>
   );
 }
