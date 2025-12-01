@@ -44,6 +44,8 @@ export async function loadWidgetsDataFor(
     return acc;
   }, {});
 
+  console.log(widgetToUrl)
+
   const uniqueUrls = Array.from(new Set(Object.values(widgetToUrl)));
   const results = await Promise.all(uniqueUrls.map((u) => fetchJson(u)));
   const urlToResult = Object.fromEntries(

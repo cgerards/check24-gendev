@@ -1,28 +1,47 @@
+"use client";
+
 import CheckNavbar from "../components/Navbar";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import "./embla.css";
 
+import Cookies from "js-cookie";
+
 import WidgetRenderer from "@/widgets/WidgetRenderer";
 
 import { loadWidgetsDataFor } from "@/lib/widgetsData";
+import { useState, useEffect } from "react";
 
-export default async function Home() {
-  const response = await fetch("http://127.0.0.1:8000/widgetlist/?user_id=1");
-  const orchestrator = (await response.json()) as {
-    widgets: { widget_id: string; type: string }[];
-  };
+export default function Home() {
+  const [widgetsToRender, setWidgetsToRender] = useState([]);
 
+  const userId = Cookies.get("user");
 
-  const widgetDataMap = await loadWidgetsDataFor(orchestrator.widgets);
+  useEffect(() => {
+    let useUserID = userId;
+    if (!userId)
+      useUserID = "0";
+      
 
-  const widgetsToRender = orchestrator.widgets.map((w) => ({
-    type: w.type,
-    widget_id: w.widget_id,
-    data: widgetDataMap[w.widget_id],
-  }));
+    async function load() {
+      const res = await fetch(
+        `http://127.0.0.1:8000/widgetlist/?user_id=${useUserID}`
+      );
+      const orchestrator = await res.json();
 
-  console.log(widgetsToRender);
+      const widgetDataMap = await loadWidgetsDataFor(orchestrator.widgets);
+
+      const combined = orchestrator.widgets.map((w: any) => ({
+        type: w.type,
+        widget_id: w.widget_id,
+        data: widgetDataMap[w.widget_id],
+      }));
+
+      setWidgetsToRender(combined);
+    }
+
+    load();
+  }, [userId]);
 
   return (
     <div className="flex flex-col min-h-screen w-full">

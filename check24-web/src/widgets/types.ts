@@ -25,9 +25,6 @@ export interface DealItem {
   season: "blackfriday" | "christmas" | string;
 }
 
-export interface DealProps {
-  deal: DealItem;
-}
 
 export interface BasicCarouselItem {
   title: string;

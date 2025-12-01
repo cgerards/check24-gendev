@@ -1,6 +1,6 @@
 "use client";
 
-import { DealProps } from "./types";
+import { DealItem } from "./types";
 
 const seasonStyles: Record<
   string,
@@ -38,7 +38,10 @@ function formatDescription(text: string) {
   );
 }
 
-export default function Deal({ deal }: DealProps) {
+export default function Deal(deal : DealItem) {
+
+  console.log("DEAL")
+  console.log(deal)
   const style = seasonStyles[deal.season] ?? seasonStyles.blackfriday;
 
   return (

@@ -13,7 +13,7 @@ import AlternativeCarousel from "./AlternativeCarousel";
 /* 
 const TYPES_MAP: Record<string, string> = {
   shopping_carousel: carousel,
-  car_widget: carwidget
+  car_widget: car_widget
   mobile_minimal: minimal,
   credit_minimal: minimal,
   home_widget: dual,
