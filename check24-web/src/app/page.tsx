@@ -5,7 +5,7 @@ import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import "./embla.css";
 
-import Cookies from "js-cookie";
+import Cookies from "@/lib/cookies";
 
 import WidgetRenderer from "@/widgets/WidgetRenderer";
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Cookies from "js-cookie";
+import Cookies from "@/lib/cookies";
 import MySwitch from "@/components/ui/MySwitch";
 import MiniNavbar from "@/components/MiniNavbar";
 
