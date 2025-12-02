@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  orchestrator:
+    build:
+      context: .
+      dockerfile: ./core_orchestrator/Dockerfile
+    ports:
+      - "8000:8000"
+
+  home:
+    build:
+      context: .
+      dockerfile: ./product_services/home/Dockerfile
+    ports:
+      - "8001:8001"
+
+  travel:
+    build:
+      context: .
+      dockerfile: ./product_services/travel/Dockerfile
+    ports:
+      - "8002:8002"
+
+  shopping:
+    build:
+      context: .
+      dockerfile: ./product_services/shopping/Dockerfile
+    ports:
+      - "8003:8003"
+
+  contract:
+    build:
+      context: .
+      dockerfile: ./product_services/contract/Dockerfile
+    ports:
+      - "8004:8004"
