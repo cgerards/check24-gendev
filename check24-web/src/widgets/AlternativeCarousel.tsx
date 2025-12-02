@@ -1,6 +1,6 @@
 "use client";
 
-import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
+import { DotButton, useDotButton } from "../components/ui/EmblaCarouselDotButton";
 
 import Esim from "@/components/Esim";
 import RentalCar from "@/components/RentalCar";
@@ -10,7 +10,7 @@ import {
   PrevButton,
   NextButton,
   usePrevNextButtons,
-} from "./EmblaCarouselArrowButtons";
+} from "../components/ui/EmblaCarouselArrowButtons";
 import useEmblaCarousel from "embla-carousel-react";
 
 const AlternativeCarousel = (props: any) => {
