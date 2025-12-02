@@ -6,7 +6,7 @@
 
   const SLIDES = Array.from(Array(6).keys());
 */
-export type OrchestratorWidget = { widget_id: string; type: string };
+export type OrchestratorWidget = { widget_id: string; type: string; url: string };
 
 const ENDPOINT_MAP: Record<string, string> = {
   shopping_carousel: "http://127.0.0.1:8003/offers",
