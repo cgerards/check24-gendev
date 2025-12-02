@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Radio from "../components/ui/Radio";
+import Link from "next/link";
 
 import ruler from "../../public/ruler.svg";
 
@@ -58,9 +59,12 @@ export default function CarWidget() {
                 label="Vollkasko"
               />
             </div>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+            <Link
+              href="/compare"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded inline-block text-center"
+            >
               Vergleichen & sparen
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -114,9 +118,9 @@ export default function CarWidget() {
               />
             </div>
 
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+            <Link href="/about" className="bg-blue-500 hover:bg-blue-700 text-center text-white font-bold py-2 px-4 border border-blue-700 rounded">
               Finden
-            </button>
+            </Link>
           </div>
         </div>
       </div>

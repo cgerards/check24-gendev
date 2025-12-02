@@ -33,7 +33,7 @@ export default function Login() {
       <MiniNavbar />
 
       <main className="flex grow items-center justify-center">
-        <div className="w-full max-w-md rounded-lg bg-white p-8 shadow-lg">
+        <div className="w-full max-w-md rounded-lg bg-white p-6 shadow-lg">
           <div className="flex items-center justify-between pb-5">
             <p className="font-bold underline">User selection</p>
             <button

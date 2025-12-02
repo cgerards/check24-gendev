@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { DualProps } from "./types";
 
+import Link from "next/link";
+
 export default function DualContainer({ header, items }: DualProps) {
   const displayItems = items;
 
@@ -39,7 +41,7 @@ export default function DualContainer({ header, items }: DualProps) {
 
       <div className="flex flex-col sm:flex-row gap-3 p-1">
         {/* FIRST */}
-        <div className="shadow-md bg-neutral-50 rounded-2xl flex flex-col sm:flex-row overflow-hidden relative">
+        <Link href="/about" className="shadow-md bg-neutral-50 rounded-2xl flex flex-col sm:flex-row overflow-hidden relative">
           <Image
             src={displayItems[0].src}
             alt=""
@@ -64,9 +66,9 @@ export default function DualContainer({ header, items }: DualProps) {
               </div>
             </div>
           </div>
-        </div>
+        </Link>
 
-        <div className="shadow-md bg-neutral-50 rounded-2xl flex flex-col sm:flex-row overflow-hidden relative">
+        <Link href="/about" className="shadow-md bg-neutral-50 rounded-2xl flex flex-col sm:flex-row overflow-hidden relative">
           <Image
             src={displayItems[1].src}
             alt=""
@@ -93,7 +95,7 @@ export default function DualContainer({ header, items }: DualProps) {
               </div>
             </div>
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );

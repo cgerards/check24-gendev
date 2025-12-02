@@ -1,4 +1,5 @@
 import { MinimalProps } from "./types";
+import Link from "next/link";
 
 export default function MinimalCard({ header, type, items }: MinimalProps) {
   const displayItems = items;
@@ -13,7 +14,7 @@ export default function MinimalCard({ header, type, items }: MinimalProps) {
         </h2>
       )}
 
-      <div className="grid grid-cols-9 gap-3 border-gray-100">
+      <Link href="/about" className="grid grid-cols-9 gap-3 border-gray-100">
         {items.map((item, index) => (
           <div
             key={index}
@@ -49,7 +50,7 @@ export default function MinimalCard({ header, type, items }: MinimalProps) {
             </span>
           </div>
         ))}
-      </div>
+      </Link>
     </section>
   );
 }

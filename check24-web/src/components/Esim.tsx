@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 import DataPlanSelector from "./ui/DataPlanSelector";
 import location from "../../public/location.svg";
@@ -40,9 +41,9 @@ export default function Esim() {
               required
             />
           </div>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+          <Link href="/about" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
             Jetzt vergleichen
-          </button>
+          </Link>
         </div>
       </div>
     </div>

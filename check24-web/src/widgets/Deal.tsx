@@ -70,7 +70,7 @@ export default function Deal(deal : DealItem) {
 
             <div className="flex items-center gap-3">
               <a
-                href="#deals"
+                href="/about"
                 className={`inline-flex items-center gap-2 rounded-md px-4 py-2 text-sm font-semibold shadow focus:outline-none focus:ring-2 focus:ring-offset-2 ${style.button}`}
                 aria-label="Show Black Friday deals"
               >
@@ -90,7 +90,7 @@ export default function Deal(deal : DealItem) {
                 </svg>
               </a>
 
-              <a href="#learn" className={`text-sm underline hover:text-white`}>
+              <a href="/about" className={`text-sm underline hover:text-white`}>
                 {deal.addition}
               </a>
             </div>

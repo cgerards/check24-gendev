@@ -45,22 +45,22 @@ function Footer() {
           <div className="grid grid-cols-4 gap-2 w-50 -ml-2">
             <span className="aspect-square text-sm flex justify-center items-start">
               <Link href="/about">
-                <Image className="w-8" src={facebook} alt="facebook" />
+                <Image className="w-8 invert" src={facebook} alt="facebook" />
               </Link>
             </span>
             <span className="aspect-square text-sm flex justify-center items-start">
               <Link href="/about">
-                <Image className="w-8" src={instagram} alt="instagram" />
+                <Image className="w-8 invert" src={instagram} alt="instagram" />
               </Link>
             </span>
             <span className="aspect-square text-sm flex justify-center items-start">
               <Link href="/about">
-                <Image className="w-8" src={youtube} alt="youtube" />
+                <Image className="w-8 invert" src={youtube} alt="youtube" />
               </Link>
             </span>
             <span className="aspect-square text-sm flex justify-center items-start">
               <Link href="/about">
-                <Image className="w-8" src={tiktok} alt="tiktok" />
+                <Image className="w-8 invert" src={tiktok} alt="tiktok" />
               </Link>
             </span>
           </div>

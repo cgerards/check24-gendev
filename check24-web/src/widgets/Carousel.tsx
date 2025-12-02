@@ -4,6 +4,8 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import React, { useRef } from "react";
 
+import Link from "next/link";
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -95,7 +97,7 @@ export default function Carousel({ header, items }: BasicCarouselProps) {
       >
         {items.map((item, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-white rounded-lg shadow-md overflow-hidden min-h-[400px] flex flex-col">
+            <Link href="/about" className="bg-white rounded-lg shadow-md overflow-hidden min-h-[400px] flex flex-col">
               <Image
                 src={displayItems[index].src}
                 alt={displayItems[index].alt}
@@ -111,7 +113,7 @@ export default function Carousel({ header, items }: BasicCarouselProps) {
                   {displayItems[index].description}
                 </p>
               </div>
-            </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

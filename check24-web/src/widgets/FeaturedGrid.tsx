@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 
-import { BasicGridItem, BasicGridProps } from "@/widgets/types";
+import { BasicGridProps } from "@/widgets/types";
+
+import Link from "next/link";
 
 export default function FeaturedGrid({ header, items }: BasicGridProps) {
   const displayItems = items;
@@ -15,7 +17,7 @@ export default function FeaturedGrid({ header, items }: BasicGridProps) {
         </h2>
       )}
       <div className="grid grid-cols-2 lg:grid-cols-6 gap-1 lg:gap-3 p-1">
-        <div className="shadow-md col-span-1 row-span-3 lg:col-span-3 lg:row-span-1 rounded-2xl aspect-9/10 lg:aspect-21/9 overflow-hidden relative">
+        <Link href="/about" className="shadow-md col-span-1 row-span-3 lg:col-span-3 lg:row-span-1 rounded-2xl aspect-9/10 lg:aspect-21/9 overflow-hidden relative">
           <Image
             src={displayItems[0].src}
             alt={displayItems[0].alt}
@@ -29,9 +31,9 @@ export default function FeaturedGrid({ header, items }: BasicGridProps) {
               {displayItems[0].subtitle}
             </div>
           </span>
-        </div>
+        </Link>
 
-        <div className="shadow-md col-span-1 row-span-3 lg:col-span-3 lg:row-span-1 rounded-2xl aspect-9/10 lg:aspect-21/9 overflow-hidden relative">
+        <Link href="/about" className="shadow-md col-span-1 row-span-3 lg:col-span-3 lg:row-span-1 rounded-2xl aspect-9/10 lg:aspect-21/9 overflow-hidden relative">
           <Image
             src={displayItems[1].src}
             alt={displayItems[1].alt}
@@ -45,9 +47,9 @@ export default function FeaturedGrid({ header, items }: BasicGridProps) {
               {displayItems[1].subtitle}
             </div>
           </span>
-        </div>
+        </Link>
 
-        <div className="shadow-md col-span-1 row-span-3 lg:col-span-2 lg:row-span-1 rounded-2xl aspect-9/10 lg:aspect-video overflow-hidden relative">
+        <Link href="/about" className="shadow-md col-span-1 row-span-3 lg:col-span-2 lg:row-span-1 rounded-2xl aspect-9/10 lg:aspect-video overflow-hidden relative">
           <Image
             src={displayItems[2].src}
             alt={displayItems[2].alt}
@@ -61,9 +63,9 @@ export default function FeaturedGrid({ header, items }: BasicGridProps) {
               {displayItems[2].subtitle}
             </div>
           </span>
-        </div>
+        </Link>
 
-        <div className="shadow-md col-span-1 row-span-3 lg:col-span-2 lg:row-span-1 rounded-2xl aspect-9/10 lg:aspect-video overflow-hidden relative">
+        <Link href="/about" className="shadow-md col-span-1 row-span-3 lg:col-span-2 lg:row-span-1 rounded-2xl aspect-9/10 lg:aspect-video overflow-hidden relative">
           <Image
             src={displayItems[3].src}
             alt={displayItems[3].alt}
@@ -77,9 +79,9 @@ export default function FeaturedGrid({ header, items }: BasicGridProps) {
               {displayItems[3].subtitle}
             </div>
           </span>
-        </div>
+        </Link>
 
-        <div className="shadow-md hidden lg:block col-span-2 row-span-1 rounded-2xl aspect-video overflow-hidden relative">
+        <Link href="/about" className="shadow-md hidden lg:block col-span-2 row-span-1 rounded-2xl aspect-video overflow-hidden relative">
           <Image
             src={displayItems[4].src}
             alt={displayItems[4].alt}
@@ -93,7 +95,7 @@ export default function FeaturedGrid({ header, items }: BasicGridProps) {
               {displayItems[4].subtitle}
             </div>
           </span>
-        </div>
+        </Link>
       </div>
     </div>
   );
