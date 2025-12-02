@@ -7,12 +7,10 @@ import json
 
 app = FastAPI(title="Home Widget")
 
-# Allow cross-origin requests during development
-origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["http://localhost:3000", "https://check24-challenge-gerards.vercel.app/"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

@@ -17,12 +17,10 @@ CONTRACT_URL = os.getenv("CONTRACT_URL", "http://127.0.0.1:8004")
 
 app = FastAPI()
 
-# Enable CORS so frontend (e.g. localhost) can call this service
-origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["http://localhost:3000", "https://check24-challenge-gerards.vercel.app/"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
