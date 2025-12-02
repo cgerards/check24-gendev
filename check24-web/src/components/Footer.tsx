@@ -23,9 +23,9 @@ function Footer() {
           </div>
 
           <div className="text-sm text-white font-semibold lg:-mt-2">
-            <span className="text-sm">
+            <Link href="/about" className="text-sm">
               Deutschlands größtes Vergleichsportal
-            </span>
+            </Link>
           </div>
 
           <div className="text-white p-2 flex sm:justify-center lg:justify-start w-full gap-x-2 lg:-ml-2">
@@ -67,37 +67,71 @@ function Footer() {
         </div>
 
         <div className="hidden lg:flex col-span-1 row-span-4 p-2 text-white flex-col gap-1">
-          <span className="text-sm font-bold pb-2">Über CHECK24</span>
-          <span className="text-sm hover:underline">Karriere</span>
-          <span className="text-sm hover:underline">Presse</span>
-          <span className="text-sm hover:underline">Unternehmen</span>
-          <span className="text-sm hover:underline">CHECK24 Österreich</span>
-          <span className="text-sm hover:underline">CHECK24 Spanien</span>
+          <span className="text-sm font-bold pb-2">
+            Über CHECK24
+          </span>
+          <Link href="/about" className="text-sm hover:underline">
+            Karriere
+          </Link>
+          <Link href="/about" className="text-sm hover:underline">
+            Presse
+          </Link>
+          <Link href="/about" className="text-sm hover:underline">
+            Unternehmen
+          </Link>
+          <Link href="/about" className="text-sm hover:underline">
+            CHECK24 Österreich
+          </Link>
+          <Link href="/about" className="text-sm hover:underline">
+            CHECK24 Spanien
+          </Link>
         </div>
 
         <div className="hidden lg:flex col-span-1 row-span-4 p-2 text-white flex-col gap-1">
-          <span className="text-sm font-bold pb-2">Unsere Partner</span>
-          <span className="text-sm hover:underline">Partnerprogramm</span>
-          <span className="text-sm hover:underline">Profi werden</span>
-          <span className="text-sm hover:underline">Affiliate werden</span>
-          <span className="text-sm hover:underline">Unterkunft anmelden</span>
+          <span className="text-sm font-bold pb-2">
+            Unsere Partner
+          </span>
+          <Link href="/about" className="text-sm hover:underline">
+            Partnerprogramm
+          </Link>
+          <Link href="/about" className="text-sm hover:underline">
+            Profi werden
+          </Link>
+          <Link href="/about" className="text-sm hover:underline">
+            Affiliate werden
+          </Link>
+          <Link href="/about" className="text-sm hover:underline">
+            Unterkunft anmelden
+          </Link>
         </div>
 
         <div className="hidden lg:flex col-span-1 row-span-4 p-2 text-white flex-col gap-1">
           <span className="text-sm font-bold pb-2">Unser Engagement</span>
-          <span className="text-sm hover:underline">Nachhaltigkeit</span>
-          <span className="text-sm hover:underline">CHECK24 hilft Kindern</span>
-          <span className="text-sm hover:underline">
+          <Link href="/about" className="text-sm hover:underline">
+            Nachhaltigkeit
+          </Link>
+          <Link href="/about" className="text-sm hover:underline">
+            CHECK24 hilft Kindern
+          </Link>
+          <Link href="/about" className="text-sm hover:underline">
             CHECK24 hilft der Natur
-          </span>
+          </Link>
         </div>
 
         <div className="hidden lg:flex col-span-1 row-span-4 p-2 text-white flex-col gap-1">
           <span className="text-sm font-bold pb-2">Unser Service für Sie</span>
-          <span className="text-sm hover:underline">Hilfe und Kontakt</span>
-          <span className="text-sm hover:underline">CHECK24 App</span>
-          <span className="text-sm hover:underline">CHECK24 Gutscheine</span>
-          <span className="text-sm hover:underline">CHECK24 Punkte</span>
+          <Link href="/about" className="text-sm hover:underline">
+            Hilfe und Kontakt
+          </Link>
+          <Link href="/about" className="text-sm hover:underline">
+            CHECK24 App
+          </Link>
+          <Link href="/about" className="text-sm hover:underline">
+            CHECK24 Gutscheine
+          </Link>
+          <Link href="/about" className="text-sm hover:underline">
+            CHECK24 Punkte
+          </Link>
         </div>
       </div>
     </footer>
