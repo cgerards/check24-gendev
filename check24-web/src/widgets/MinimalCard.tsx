@@ -14,7 +14,7 @@ export default function MinimalCard({ header, type, items }: MinimalProps) {
         </h2>
       )}
 
-      <Link href="/about" className="grid grid-cols-9 gap-3 border-gray-100">
+      <Link href="/about" className="grid sm:grid-cols-9 gap-3 border-gray-100">
         {items.map((item, index) => (
           <div
             key={index}
