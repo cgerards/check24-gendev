@@ -34,6 +34,12 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "routel-backend.de",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
         hostname: "store.storeimages.cdn-apple.com",
         port: "",
         pathname: "/**",

@@ -7,6 +7,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
+import macDesk from "../../public/mac_desk.jpeg";
+import dolomiti from "../../public/dolomiti.jpg";
+import finance from "../../public/finance.jpg";
+
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const placeholders = [
@@ -31,43 +35,48 @@ export default function Hero() {
     >
       <SwiperSlide>
         <Image
-          src={placeholders[0]}
+          src={macDesk}
           alt=""
           width={1920}
           height={500}
           className="w-full h-full object-cover"
           priority={true}
         />
+        <div className="absolute inset-0 flex items-center justify-center px-6">
+          <span className="text-white text-5xl md:text-9xl font-extrabold drop-shadow-lg max-w-3xl text-center leading-tight">
+            CHECK24 GENDEV
+          </span>
+        </div>
       </SwiperSlide>
 
       <SwiperSlide>
         <Image
-          src={placeholders[1]}
+          src={dolomiti}
           alt=""
           width={1920}
           height={500}
           className="w-full h-full object-cover"
         />
+        <div className="absolute inset-0 flex items-center justify-center px-6">
+          <span className="text-white text-5xl md:text-9xl font-extrabold drop-shadow-lg max-w-3xl text-center leading-tight">
+            REISEN
+          </span>
+        </div>
       </SwiperSlide>
 
       <SwiperSlide>
         <Image
-          src={placeholders[2]}
+          src={finance}
           alt=""
           width={1920}
           height={500}
           className="w-full h-full object-cover"
         />
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <Image
-          src={placeholders[3]}
-          alt=""
-          width={1920}
-          height={500}
-          className="w-full h-full object-cover"
-        />
+        <div className="absolute inset-0 flex items-center justify-center px-6">
+          <span className="text-white text-5xl md:text-9xl font-extrabold drop-shadow-lg max-w-3xl text-center leading-tight">
+            PREISE VERGLEICHEN
+          </span>
+        </div>
       </SwiperSlide>
     </Swiper>
   );
