@@ -1,9 +1,9 @@
 # GenDev 8 - Home Widgets System (Christoph Gerards)
-![Check24 Logo](./images/Check24.svg)
+[![Check24 Logo](./images/Check24.svg)](https://github.com/check24-scholarships/check24-technical-concept-challenge)
 
 ## Dokumente
-- [CONCEPT.md](./CONCEPT.md)
-- [DEVELOPER_GUIDELINE.md](./DEVELOPER_GUIDELINE.md)
+- [CONCEPT.md](./CONCEPT.md) (englisch)
+- [DEVELOPER_GUIDELINE.md](./DEVELOPER_GUIDELINE.md) (englisch)
 - [Proof of Concept – Live Deployment](https://www.check24-challenge-gerards.vercel.app/)
 - [Application Video](https://your-video-link)
 
