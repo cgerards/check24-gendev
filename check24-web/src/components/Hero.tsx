@@ -72,8 +72,8 @@ export default function Hero() {
           height={500}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 flex items-center justify-center px-6">
-          <span className="text-white text-5xl md:text-9xl font-extrabold drop-shadow-lg max-w-3xl text-center leading-tight">
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-6">
+          <span className="text-white text-5xl md:text-9xl font-extrabold drop-shadow-lg max-w-4xl text-center leading-tight">
             PREISE VERGLEICHEN
           </span>
         </div>
