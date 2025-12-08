@@ -16,6 +16,7 @@ In diesem Projekt stelle ich eine Next.js/React-basierte Webseite zur Verfügung
 Zusätzlich dazu habe ich eine native Android App *(Kotlin Compose)* entwickelt, welche die Startpage der Check24-App darstellen soll. Hierbei ist das gleiche Verhalten wie bereits in der Webseite für die App "übersetzt" implementiert worden. Dazu wurden für die App-Version eigens Widgets designed und implementiert, die jedoch auf die gleichen Daten der Speedboats zugreifen.
 
 In dieser README wird das Projekt vorgestellt und Installationshinweise bereitgestellt.
+Die beiden weiteren Dokumente (Concept, Developer_Guideline) habe ich auf Englisch verfasst, da ich mich in dieser Sprache gezielter (mit Fachbegriffen der Informatik) ausdrücken kann.
 
 ## Video 
 
