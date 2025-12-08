@@ -115,12 +115,14 @@ Import:
   <img src="./images/jetpack-compose.webp" alt="Kotlin Compose" height="60"/>
   <img src="./images/vercel.jpg" alt="Vercel" height="60"/>
   <img src="./images/aws.svg" alt="AWS" height="60"/>
+  <img src="./images/docker.png" alt="docker" height="60"/>
 </div>
 
-- **Next.js/React** für das Frontend
+- **Next.js / React** für das Frontend
 - **FastAPI** für den Orchestrator und die Speedboats
 - **Kotlin / Jetpack Compose** für die Native Android App
 - **Vercel** und **AWS** für das Deployment von Frontend und Backend
+- **Docker** für das Erstellen von Containern im Backend
 
 
 ## Kontakt
