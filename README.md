@@ -109,6 +109,13 @@ Import:
 
 ## Features
 
+- Orchestrator fetched Informationen und fasst Widgets zusammen
+- Dynamisches Anzeigen von Widgets in der Webversion und Android App
+- Unabhängige Speedboats, welche die Last von der Homepage nehmen
+- Android App unterstützt gleiches Format wie die Webversion
+
+## Technologien
+
 <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap; margin: 20px 0;">
   <img src="./images/react-nextjs.png" alt="Next.js React" height="60"/>
   <img src="./images/fastapi.png" alt="FastAPI" height="60"/>
