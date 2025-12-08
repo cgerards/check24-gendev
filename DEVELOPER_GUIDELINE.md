@@ -89,4 +89,40 @@ If you need a new widget type:
 
 After this, the widget becomes dynamically usable without app updates.
 
-# 5 Best Practices for Product Teams
+# 5 Testing Your Speedboat Locally
+
+Start the entire backend stack with docker.
+Services run on:
+| Service            | Port |
+| ------------------ | ---- |
+| Orchestrator       | 8000 |
+| Speedboat Home     | 8001 |
+| Speedboat Travel   | 8002 |
+| Speedboat Shop     | 8003 |
+| Speedboat Contract | 8004 |
+
+
+To inspect your widget:
+```bash
+curl http://localhost:8002/widgets
+curl http://localhost:8002/widgets/travel_top_destinations
+```
+
+To test the final orchestration (if added to user 1 / alice):
+```bash
+curl http://localhost:8000/widgets?user_id=1
+```
+
+
+# 6 Summary
+
+This guideline enables product teams to build flexible, autonomous widgets with minimal friction:
+
+- Build a Speedboat
+- Expose widget definitions
+- Provide a payload
+- Test locally
+- Let the Orchestrator handle the rest
+- Let Web and Android App render your widgets automatically
+
+Product teams can innovate independently while the Core provides the minimal stable contract required for safety and performance.

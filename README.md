@@ -61,11 +61,15 @@ $ docker compose up --build
 ```
 
 Anschließend wurden fünf Services bzw. Speedboats gestartet:
-- Port **8000**: orchestrator *[Hauptdienst zum Laden der Widgets, z.B. auch Anordnung]*
-- Port **8001**: home *[Dienst für Eigenheim-Widgets]*
-- Port **8002**: travel *[Dienst für Reise-Widgets]*
-- Port **8003**: shopping *[Dienst für Shopping-Widgets]*
-- Port **8004**: contract *[Dienst für Vertrags-Widgets]*
+
+| Service            | Port | Beschreibung |
+| ------------------ | ---- |--------------|
+| Orchestrator       | 8000 | Hauptdienst zum Laden der Widgets, z.B. auch Anordnung |
+| Speedboat Home     | 8001 | Dienst für Eigenheim-Widgets |
+| Speedboat Travel   | 8002 | Dienst für Reise-Widgets |
+| Speedboat Shop     | 8003 | Dienst für Shopping-Widgets |
+| Speedboat Contract | 8004 | Dienst für Vertrags-Widgets |
+
 
 ### Mobile (Android)
 Das Android-Projekt liegt im Ordner `check24_mobile`.
