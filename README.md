@@ -35,7 +35,7 @@ Die Webseite ist über folgenden Link erreichbar:
 ## Screenshots des Projekts
 
 <details>
-<summary><strong>📱
+<summary><strong>🖥️
  Website / Web-App Screenshots</strong> (click to expand)</summary>
 
 <div style="display: flex; gap: 10px; flex-wrap: wrap;">
@@ -88,7 +88,7 @@ Anschließend wurden fünf Services bzw. Speedboats gestartet:
 | Orchestrator       | 8000 | Hauptdienst zum Laden der Widgets, z.B. auch Anordnung |
 | Speedboat Home     | 8001 | Dienst für Eigenheim-Widgets |
 | Speedboat Travel   | 8002 | Dienst für Reise-Widgets |
-| Speedboat Shop     | 8003 | Dienst für Shopping-Widgets |
+| Speedboat Shopping | 8003 | Dienst für Shopping-Widgets |
 | Speedboat Contract | 8004 | Dienst für Vertrags-Widgets |
 
 
