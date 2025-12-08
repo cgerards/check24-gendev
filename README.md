@@ -109,12 +109,18 @@ Import:
 
 ## Features
 
+<div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap; margin: 20px 0;">
+  <img src="./images/react-nextjs.png" alt="Next.js React" height="60"/>
+  <img src="./images/fastapi.png" alt="FastAPI" height="60"/>
+  <img src="./images/jetpack-compose.webp" alt="Kotlin Compose" height="60"/>
+  <img src="./images/vercel.jpg" alt="Vercel" height="60"/>
+  <img src="./images/aws.svg" alt="AWS" height="60"/>
+</div>
 
-
-## Technologien
-- Next.js React für das Frontend
-- FastAPI für den Orchestrator und die Speedboats
-- Kotlin Compose für die Native Android App
+- **Next.js/React** für das Frontend
+- **FastAPI** für den Orchestrator und die Speedboats
+- **Kotlin / Jetpack Compose** für die Native Android App
+- **Vercel** und **AWS** für das Deployment von Frontend und Backend
 
 
 ## Kontakt
