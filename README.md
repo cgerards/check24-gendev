@@ -34,12 +34,32 @@ Die Webseite ist über folgenden Link erreichbar:
 
 ## Screenshots des Projekts
 
+<details>
+<summary><strong>📱
+ Website / Web-App Screenshots</strong> (click to expand)</summary>
+
+<div style="display: flex; gap: 10px; flex-wrap: wrap;">
+  <img src="./images/Web_Screen1.png" alt="Screenshot 1"/>
+  <img src="./images/Web_Screen2.png" alt="Screenshot 2"/>
+  <img src="./images/Web_Screen3.png" alt="Screenshot 3"/>
+  <img src="./images/Web_Screen4.png" alt="Screenshot 4"/>
+  <img src="./images/Web_Screen5.png" alt="Screenshot 4"/>
+</div>
+
+</details>
+
+<details>
+<summary><strong>📱
+ Android App Screenshots</strong> (click to expand)</summary>
+
 <div style="display: flex; gap: 10px; flex-wrap: wrap;">
   <img src="./images/App_Screen1.png" alt="Screenshot 1" width="250"/>
   <img src="./images/App_Screen2.png" alt="Screenshot 2" width="250"/>
   <img src="./images/App_Screen3.png" alt="Screenshot 3" width="250"/>
   <img src="./images/App_Screen4.png" alt="Screenshot 4" width="250"/>
 </div>
+
+</details>
 
 ## Installationsanleitung des PoC
 
