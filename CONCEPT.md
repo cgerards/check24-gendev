@@ -122,14 +122,26 @@ After the data is fetched from the multiple speedboats, they will be rendered in
 
 Product teams are free to introduce new widget types, as long as they follow the schema and the frontends implement the renderer components.
 
-## 4 Deployment Concept
+## 4 Decision Rationale & Trade-offs
+
+| Component                         | Technology               | Reasoning / Trade-off                                                                                          |
+| --------------------------------- | ------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| Frontend Web                      | Next.js / React          | Supports SSR + client-side rendering; well-supported; easy deployment on Vercel; standard for modern web apps. |
+| Backend Orchestrator + Speedboats | FastAPI                  | Lightweight, async-friendly, Python ecosystem; fast to prototype; easy parallel fan-out to speedboats. Additionally also experienced due to university practicals.        |
+| Mobile App                        | Kotlin + Jetpack Compose | Native performance, modern UI toolkit, easy mapping of widgets from web schema; maintainable long-term.        |
+| Deployment Web                    | Vercel                   | Optimized for Next.js static & dynamic pages; simple CI/CD; free tier available.                               |
+| Deployment Backend                | AWS EC2                  | Flexible, isolated services; full control; avoids vendor lock-in tied to serverless-only solutions. Student tier available.            |
+| Containerization                  | Docker                   | Ensures reproducibility, portability, and easy scaling; all services isolated.                                 |
+
+
+## 5 Deployment Concept
 **PoC Deployment:**
 - Frontend Web → Vercel
 - Backend (Orchestrator + Speedboats) → AWS EC2
 
 All backend services are containerized via Docker Compose, enabling simple scaling, portability, and reproducible deployments.
 
-### 4.1 Avoiding Vendor Lock-In
+### 5.1 Avoiding Vendor Lock-In
 
 The architecture explicitly avoids relying on AWS-specific services.
 
@@ -152,9 +164,9 @@ The architecture explicitly avoids relying on AWS-specific services.
 
 
 
-## 5 Performance Strategy
+## 6 Performance Strategy
 
-### 5.1 Async Fan-Out
+### 6.1 Async Fan-Out
 
 Orchestrator uses non-blocking asynchronous calls to speedboats with:
 - request timeouts
@@ -164,7 +176,7 @@ Orchestrator uses non-blocking asynchronous calls to speedboats with:
 If a speedboat is slow, the Home Screen will still load.
 
 
-### 5.2 Graceful Degradation
+### 6.2 Graceful Degradation
 
 - Widget timeouts → omit widget
 - Speedboat fails → omit widget
@@ -172,7 +184,7 @@ If a speedboat is slow, the Home Screen will still load.
 - Ensure Core never propagates product failures
 
 
-## 6 High Availability
+## 7 High Availability
 Designed so that:
 - Orchestrator replicas are stateless → auto-recover
 - Speedboats isolated → single product outage ≠ Home failure
@@ -180,7 +192,7 @@ Designed so that:
 - Sidecar circuit breakers for preventing cascading failures
 
 
-## 7 Why This Architecture Meets the Guiding Principles
+## 8 Why This Architecture Meets the Guiding Principles
 ✔ Decentralized
 
 Every product runs independently.
@@ -206,13 +218,13 @@ Both Web and Mobile consume the same schema.
 Only essential boundaries (validation, merging, risks).
 
 
-## 8 Future Extensions
+## 9 Future Extensions
 
 - A/B testing handled in Speedboats
 - ML-based recommendations in the Orchestrator (Recommender System)
 - A public “Widget Marketplace” enabling domain teams to publish widgets
 
-## 9 Summary
+## 10 Summary
 
 This architecture implements a **realistic, decentralized and scalable** Home Widget system inspired by real-world Check24 patterns.
 It offers:
