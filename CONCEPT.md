@@ -2,53 +2,81 @@
 
 
 ## 1. Introduction
-This project implements the Check24-Gendev Challenge and finds a solution for the loading of widgets on the startpage in both a native mobile app and a website.
+This project implements the Check24-Gendev Challenge and finds a solution for the loading of widgets on the startpage in both a native mobile app and a website. In this document, the technical concept for this challenge will be provided describing a decentralized, scalable Home Widget Service that supports high traffic, personalized content and multi-platform applications.
 
 For this approach, ***multiple microservices***, i.e. "speedboats", are created to handle the logic and to provide the data for every widget. Therefore, the load on each individual element of the startpage can and will be dynamically assigned (also in terms of load-balancing), since we can control the flow and arrangement of the widgets depending on an active user-session.
 
 The most important speedboat for this approach will be the orchestrator. The orchestrator is a component which will be called for every visit on the startpage and which provides the final arrangement of widgets on the startpage. With further underlying logic, it would be possible to include a ***Recommender System*** here, or also ***geographical targeting*** of Check24-users. In this implementation, a demo of ***recommending widgets based on different user-preferences*** will be provided.
 
 The orchestrator is both implemented for the website and native app, and works for both cases without modification.
+This concept is implemented as a working Proof of Concept (PoC), matching the architecture described here.
 
 ## 2. High-Level Architecture
 ![Architecutre Diagram](./images/architecture_diagram.svg)
 
-The initial request will be sent to the orchestrator. In this implementation, also a user who is not logged in will send this request, but it would be simply possible to change that and to fall back to a default case.
 
-With the orchestrator request, the application will send requests to each individual speedboat to retrieve the data. As soon as the data is available, the application will render the components onto the startpage.
+### Process Flow and Data Flow
+
+1. **Frontend → Orchestrator** <br>
+The client (web or mobile) sends a request to the Orchestrator, optionally with a user_id.
+
+2. **Orchestrator → Frontend** <br>
+The Orchestrator responds with a list of widget definitions, including: <br>
+`widget_id` <br>
+`type` <br>
+`data_url` (endpoint of the respective speedboat)
+
+3. **Frontend → Speedboats** (parallel fan-out) <br>
+The application requests each widget’s data independently and in parallel.
+
+4. **Frontend Rendering** <br>
+As soon as data for a widget is available, the renderer displays it on the Home Screen in the received order.
+
 
 ### 2.1 Achieved Goals
-- Autonomy of widgets through dedicated speedboats
-- No dependencies for updating contents (→ especially for Mobile Apps)
-- Orchestrator as the central source of information: dynamic adjustment of styling and content possible
-- Scalability: own speedboat for each service
+
+- Autonomous widget development (per domain)
+- No dependencies for updating widget content (critical for mobile apps)
+- Orchestrator as the single source of layout truth (dynamic adjustment of styling and content possible)
+- Scalable architecture through multiple speedboats
+- Dynamic personalization per user or per session
+- Frontends as thin renderers that do not contain business logic
 
 
 ## 3. Responsibilities
 ### 3.1 Core Orchestrator (FastAPI)
-- Receives: `GET /widgets?user_id=123` for logged-in users and similar for non-logged-in users
-- Provides arrangement of the widget based on user preferences
-- Provides API-endpoint where the speedboat data will be located
-- Provides the type of the widget
+The orchestrator is a lightweight and stateless coordination layer responsible for:
+- Handling `GET /widgets?user_id=123` requests (for both logged-in and non-logged-in users)
+- Selecting and ordering widgets based on user preferences
+- Providing the widget type, which determines the frontend renderer
+- Returning the data URL where the speedboat provides the widget content
 
 The core orchestrator has to specify the type of the widget, since it is not possible to dynamically render new widget-types in React nor in the native app. But with this in mind, only a major release has to be deployed once new widget-types are implemented, while it is possible to dynamically use the existing widgets.
 
-Example:
+**Example response:**
 ```json
 {
   "widgets": [
-    { "widget_id": "cityTravel_featured", "type": "featured_grid" },
-    { "widget_id": "sportTravel_grid", "type": "basic_grid" },
+    { "widget_id": "cityTravel_featured", "type": "featured_grid", "url": "http://127.0.0.1:8002/city" },
+    { "widget_id": "sportTravel_grid", "type": "basic_grid", "url": "http://127.0.0.1:8002/sport" }
   ]
 }
 
 ```
-will show two travel-related widgets on the startpage.
+This response will show two travel-related widgets on the startpage.
+
 
 
 ### 3.2 Speedboats (FastAPI)
-Each Speedboat is a small independent service providing one or more endpoints for widgets of a related field.
-Example (city-travel widget):
+Each Speedboat is a small, independent service providing one or more endpoints for widgets of a related field.
+
+It is responsible for:
+- Delivering the content payload
+- Personalizing output using the incoming user_id
+- Maintaining its own logic & data sources
+- Serving lightweight JSON responses (no HTML, only URLs for images)
+
+**Example payload (city-travel widget):**
 ```json
 {
   "header": "Die perfekte Städtereise!",
@@ -56,48 +84,52 @@ Example (city-travel widget):
     {
       "title": "London",
       "subtitle": "7.121 Unterkünfte",
-      "src": "https://media.istockphoto.com/id/1347665170/de/foto/london-bei-sonnenuntergang.jpg?s=612x612&w=0&k=20&c=oB0zxCW_uvZt4t34Q9QblePN6LqjEfjWOaHcY0Ll-7A=",
+      "src": "https://example.com/london",
       "alt": "London"
-    },
-    ...
+    }
   ]
 }
 
 ```
-It is possible to update this content at anytime.
+
+Each product delivers:
+- Personalized content (based on user_id)
+- Layout metadata (if supported by widget type)
+- Fully dynamic data that updates without needing Core deployments
+
+It is possible to update the content of speedboats at anytime.
 Once the changes are made in the backend, they will be propagated instantly to the mobile App and to the website.
 
 ### 3.3 Frontend Renderer (Web + Mobile)
-Frontends are Renderers. They will receive a list of widget-types and the corresponding URL to fetch the data from.
+Both frontends are **Renderers**. They will receive a list of widget-types and the corresponding URL to fetch the data from.
 
-After the data is fetched from the multiple speedboats, they will be rendered instantly on the startpage, ***only rendering the widgets that are necessary for this specific user***.
+Both Web (Next.js) and Android (Kotlin) follow the same model:
+1. Receive widget definitions from orchestrator
+2. Fetch each widget’s `data_url`
+3. Dynamically render components based on widget type
 
-## 4 Cross-Platform Synchronization
-The Orchestrator returns the same widget structure to both:
-- Web (Next.js)
-- Android (Kotlin)
-
-Both renderers use a component registry:
-```bash
-type: "carousel"  →  CarouselWidget()
-type: "grid"      →  GridWidget()
-type: "banner"    →  BannerWidget()
+They use a local registry, e.g.:
+```
+"featured_grid" → FeaturedGridWidget()
+"carousel"      → CarouselWidget()
+"banner"        → BannerWidget()
 ```
 
-Product teams are free to introduce new widget types, as long as:
-- They follow the schema
-- The frontends implement the renderer components
+This ensures cross-platform synchronization and consistency.
+Also, in future updates, new widget types can be added easily.
 
-This ensures flexibility without breaking layouts.
+After the data is fetched from the multiple speedboats, they will be rendered instantly on the startpage, ***only rendering the widgets that are necessary for this specific user***. This underlines the **freshness of the data** and also the user-aware rendering.
 
-## 5 Deployment Concept
-For the Proof of Concept:
+Product teams are free to introduce new widget types, as long as they follow the schema and the frontends implement the renderer components.
+
+## 4 Deployment Concept
+**PoC Deployment:**
 - Frontend Web → Vercel
-- Backend (Orchestrator + Speedboats) → AWS
+- Backend (Orchestrator + Speedboats) → AWS EC2
 
-Each service is containerized via Docker Compose, therefore easy to scale and update.
+All backend services are containerized via Docker Compose, enabling simple scaling, portability, and reproducible deployments.
 
-### 5.1 Avoiding Vendor Lock-In
+### 4.1 Avoiding Vendor Lock-In
 
 The architecture explicitly avoids relying on AWS-specific services.
 
@@ -107,19 +139,48 @@ The architecture explicitly avoids relying on AWS-specific services.
 - have no dependency on AWS-only services such as Lambda, DynamoDB, SQS, API Gateway, or proprietary SDKs
 - can be deployed identically on any platform (e.g., Google Cloud, Azure, DigitalOcean, Render, Fly.io, or a local Kubernetes cluster)
 
-Although Vercel is convenient for Next.js, the project intentionally avoids Vercel-specific features such as:
+**The frontend does not use Vercel-specific features, such as**:
 - Edge Config
 - Vercel KV / Blob / Analytics
-- Serverless Functions
 - Middleware tied to Vercel’s runtime
 
-**Instead, the frontend uses**:
+**The frontend uses:**
 - standard Next.js App Router
 - pure static + client-rendered + SSR pages
 - environment variables that follow standard .env patterns
 - build output that works anywhere (.next)
 
-## 6 Why This Architecture Meets the Guiding Principles
+
+
+## 5 Performance Strategy
+
+### 5.1 Async Fan-Out
+
+Orchestrator uses non-blocking asynchronous calls to speedboats with:
+- request timeouts
+- deadline-based merging
+- parallel fan-out
+
+If a speedboat is slow, the Home Screen will still load.
+
+
+### 5.2 Graceful Degradation
+
+- Widget timeouts → omit widget
+- Speedboat fails → omit widget
+- Home always loads with clean UX
+- Ensure Core never propagates product failures
+
+
+## 6 High Availability
+Designed so that:
+- Orchestrator replicas are stateless → auto-recover
+- Speedboats isolated → single product outage ≠ Home failure
+- Load balancer performs health checking
+- Sidecar circuit breakers for preventing cascading failures
+
+
+## 7 Why This Architecture Meets the Guiding Principles
 ✔ Decentralized
 
 Every product runs independently.
@@ -145,13 +206,21 @@ Both Web and Mobile consume the same schema.
 Only essential boundaries (validation, merging, risks).
 
 
-## 7 Future Extensions
+## 8 Future Extensions
 
 - A/B testing handled in Speedboats
-- Recommender System within the Orchestrator (ML-based)
-- Widget marketplace for product teams
+- ML-based recommendations in the Orchestrator (Recommender System)
+- A public “Widget Marketplace” enabling domain teams to publish widgets
 
-## 8 Summary
+## 9 Summary
 
-This architecture models a ***realistic, decentralized, scalable*** Home Widget ecosystem similar to Check24’s modern architecture.
-It delivers autonomy for product teams while having a simple, maintainable core and supporting both Web and Native Apps dynamically.
+This architecture implements a **realistic, decentralized and scalable** Home Widget system inspired by real-world Check24 patterns.
+It offers:
+- Full autonomy for product teams
+- Minimal dependencies
+- Extremely fast iteration cycles
+- A simple and stable core
+- Consistent rendering across all platforms
+- Instant delivery of updated content without mobile app updates
+
+The accompanying Proof of Concept validates the architecture end-to-end.
