@@ -133,7 +133,7 @@ Import:
 
 
 ## Kontakt
-Vielen Dank, dass sie meine Umsetzung dieser Challenge in Erwägung ziehen. Meine Intention war, die Challenge gründlich zu lösen, um dabei viel zu lernen.
+Vielen Dank, dass Sie meine Umsetzung dieser Challenge in Erwägung ziehen. Meine Intention war, die Challenge gründlich zu lösen, um dabei viel zu lernen.
 Ich hoffe, dass ich meine Eignung für dieses Stipendium ausreichend demonstrieren konnte.
 
 Für Fragen und Ähnliches stehe ich natürlich zur Verfügung: `christoph.gerards@gmail.com`

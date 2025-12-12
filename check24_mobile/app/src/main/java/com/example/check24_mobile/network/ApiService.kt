@@ -6,8 +6,10 @@ import retrofit2.http.GET
 import com.example.check24_mobile.BuildConfig
 import com.example.check24_mobile.model.OrchestratorResponse
 import com.google.gson.JsonElement
+import okhttp3.OkHttpClient
 import retrofit2.http.Query
 import retrofit2.http.Url
+import java.util.concurrent.TimeUnit
 
 interface OrchestratorService {
     @GET(value="widgetlist")
@@ -36,8 +38,16 @@ object RetrofitClients {
     }
 
     val GenericApi: GenericService by lazy {
+
+        val okHttpClient = OkHttpClient.Builder()
+            .readTimeout(2, TimeUnit.SECONDS)
+            .connectTimeout(2, TimeUnit.SECONDS)
+            .writeTimeout(2, TimeUnit.SECONDS)
+            .build()
+
         Retrofit.Builder()
             // Base URL is required but will be overridden by @Url
+            .client(okHttpClient)
             .baseUrl("http://localhost/") 
             .addConverterFactory(GsonConverterFactory.create())
             .build()
