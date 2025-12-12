@@ -8,36 +8,48 @@ import "./embla.css";
 import Cookies from "@/lib/cookies";
 
 import WidgetRenderer from "@/widgets/WidgetRenderer";
+import EmptyState from "@/components/EmptyState";
 
 import { loadWidgetsDataFor } from "@/lib/widgetsData";
 import { useState, useEffect } from "react";
 
 export default function Home() {
   const [widgetsToRender, setWidgetsToRender] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const userId = Cookies.get("user");
 
   useEffect(() => {
     let useUserID = userId;
-    if (!userId)
-      useUserID = "0";
-      
+    if (!userId) useUserID = "0";
 
     async function load() {
-      const res = await fetch(
-        `http://127.0.0.1:8000/widgetlist/?user_id=${useUserID}`
-      );
-      const orchestrator = await res.json();
+      try {
+        setIsLoading(true);
+        const res = await fetch(
+          `http://127.0.0.1:8000/widgetlist/?user_id=${useUserID}`
+        );
+        const orchestrator = await res.json();
 
-      const widgetDataMap = await loadWidgetsDataFor(orchestrator.widgets);
+        const widgetDataMap = await loadWidgetsDataFor(orchestrator.widgets);
 
-      const combined = orchestrator.widgets.map((w: any) => ({
-        type: w.type,
-        widget_id: w.widget_id,
-        data: widgetDataMap[w.widget_id],
-      }));
+        const combined = orchestrator.widgets.map((w: any) => ({
+          type: w.type,
+          widget_id: w.widget_id,
+          data: widgetDataMap[w.widget_id],
+        }));
 
-      setWidgetsToRender(combined);
+        const combinedFiltered = combined.filter(
+          (widget: any) => widget.data != null
+        );
+
+        setWidgetsToRender(combinedFiltered);
+      } catch (e) {
+        console.error("Failed to load widgets:", e);
+        setWidgetsToRender([]);
+      } finally {
+        setIsLoading(false);
+      }
     }
 
     load();
@@ -48,11 +60,22 @@ export default function Home() {
       <CheckNavbar />
       <Hero />
       <main className="flex flex-col grow items-center gap-y-12 py-12">
-        {widgetsToRender.map((widget, index) => (
+        {isLoading && (
+          <div className="w-full max-w-2xl px-4">
+            <div className="rounded-2xl border border-gray-200 bg-white p-8 text-center shadow-sm">
+              <div className="mx-auto mb-2 h-6 w-40 animate-pulse rounded bg-gray-200" />
+              <div className="mx-auto h-4 w-64 animate-pulse rounded bg-gray-200" />
+            </div>
+          </div>
+        )}
+
+        {!isLoading && widgetsToRender.map((widget, index) => (
           <div key={index} className="w-full max-w-7xl px-4">
             <WidgetRenderer widget={widget} />
           </div>
         ))}
+
+        {!isLoading && widgetsToRender.length == 0 && <EmptyState />}
       </main>
       <Footer />
     </div>

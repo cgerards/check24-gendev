@@ -6,25 +6,44 @@
 
   const SLIDES = Array.from(Array(6).keys());
 */
-export type OrchestratorWidget = { widget_id: string; type: string; url: string };
-
+export type OrchestratorWidget = {
+  widget_id: string;
+  type: string;
+  url: string;
+};
 
 async function fetchJson(url: string) {
-  const response = await fetch(url, { next: { revalidate: 60 } });
+  const controller = new AbortController();
+  const signal = controller.signal;
 
-  if (!response.ok) {
-    console.warn(`fetch failed ${url} ${response.status}`);
+  const timer = setTimeout(() => {
+    controller.abort();
+  }, 5000);
+
+  try {
+    const response = await fetch(url, { next: { revalidate: 60 }, signal });
+
+    if (!response.ok) {
+      console.warn(`fetch failed ${url} ${response.status}`);
+      return null;
+    }
+
+    return await response.json();
+  } catch (err: any) {
+    if (err.name === "AbortError") {
+      console.warn(`fetch timed out: ${url}`);
+    } else {
+      console.warn(`fetch error: ${url}`, err);
+    }
     return null;
+  } finally {
+    clearTimeout(timer);
   }
-
-  return response.json();
 }
 
 export async function loadWidgetsDataFor(
   widgets: OrchestratorWidget[]
 ): Promise<Record<string, any>> {
-
-
   const widgetToUrl = widgets.reduce<Record<string, string>>((acc, w) => {
     if (w.url) acc[w.widget_id] = w.url;
     return acc;
@@ -33,7 +52,7 @@ export async function loadWidgetsDataFor(
   if (Object.keys(widgetToUrl).length === 0) {
     return {};
   }
-    
+
   const uniqueUrls = Array.from(new Set(Object.values(widgetToUrl)));
   const results = await Promise.all(uniqueUrls.map((u) => fetchJson(u)));
   const urlToResult = Object.fromEntries(
