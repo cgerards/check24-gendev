@@ -37,11 +37,11 @@ android {
             // Use the debug signing config for release to avoid keystore issues during testing
             signingConfig = signingConfigs.getByName("debug")
 
-            buildConfigField("String", "SHOPPING_URL", "\"https://routel-backend.de/shopping/\"")
-            buildConfigField("String", "TRAVEL_URL", "\"https://routel-backend.de/travel/\"")
-            buildConfigField("String", "HOME_URL", "\"https://routel-backend.de/home/\"")
-            buildConfigField("String", "ORCHESTRATOR_URL", "\"https://routel-backend.de/\"")
-            buildConfigField("String", "CONTRACT_URL", "\"https://routel-backend.de/contract/\"")
+            buildConfigField("String", "SHOPPING_URL", "\"https://cgbackendservices.de/shopping/\"")
+            buildConfigField("String", "TRAVEL_URL", "\"https://cgbackendservices.de/travel/\"")
+            buildConfigField("String", "HOME_URL", "\"https://cgbackendservices.de/home/\"")
+            buildConfigField("String", "ORCHESTRATOR_URL", "\"https://cgbackendservices.de/\"")
+            buildConfigField("String", "CONTRACT_URL", "\"https://cgbackendservices.de/contract/\"")
 
         }
     }

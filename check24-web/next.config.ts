@@ -30,7 +30,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "routel-backend.de",
+        hostname: "cgbackendservices.de",
         pathname: "/**",
       },
       {
