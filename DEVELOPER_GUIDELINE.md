@@ -2,12 +2,12 @@
 
 ## 1 How Product Teams Build and Integrate Home Widgets
 
-This document explains how decentralized CHECK24 product teams can develop, register, and deliver their own Home Widgets across Web and Android.
+This document explains how decentralized CHECK24 product teams can develop, register, and deliver their own Home Widgets across **Web and Android**.
 
 **The core idea**:
 - Each product domain (Travel, Home, Shopping, etc.) provides its own Speedboat microservice.
-- A central Orchestrator aggregates these Speedboats and returns the final list of widgets to be rendered on the Home Screen.
-- Web and Mobile Apps behave as simple Renderers. They render whatever widget configuration the Orchestrator returns.
+- A central Orchestrator returns a final list of widgets to be rendered on the Home Screen, along with their types and their **data URLs**.
+- **Frontend renders the widgets and fetches the data directly from the Speedboats.**
 - Updates to content and styling do not require app releases.
 
 ![Flowchart Architecutre](./images/flowchart_architecture.svg)
@@ -44,7 +44,7 @@ new-service:
 
 ## 3 Exposing Your Widgets
 
-A speedboat must an endpoint `/<widget_url>` with the following rules:
+A speedboat must have an endpoint `/<widget_url>` with the following rules:
 - Payload must match the expectations of the widget type
 - Payload must be JSON
 - No HTML allowed
@@ -89,7 +89,49 @@ If you need a new widget type:
 
 After this, the widget becomes dynamically usable without app updates.
 
-# 5 Testing Your Speedboat Locally
+
+# 5 API Contract
+
+## 5.1 Orchestrator → Frontend API Contract
+
+The Orchestrator **does NOT** fetch widget data itself.
+
+It only returns:
+- `widget_id`
+- `type`
+- `url` → the frontend uses this to fetch the data directly from a Speedboat
+
+The url of the corresponding speedboat will be inserted automatically by the Orchestrator and does not need to be specified!
+
+**Example Orchestrator Response**:
+```json
+{
+  "widgets": [
+    { "widget_id": "cityTravel_featured", "type": "featured_grid", "url": "http://localhost:8002/city" },
+    { "widget_id": "shopping_carousel", "type": "carousel", "url": "http://localhost:8003/offers" }
+  ]
+}
+```
+
+
+**Frontend responsibility**:
+The frontend (Web or Mobile):
+1. Receives this list
+2. Performs parallel fetches:
+```bash
+GET http://localhost:8002/city
+GET http://localhost:8003/offers
+```
+3. Renders the widget based on the type
+
+This design:
+- keeps the orchestrator extremely light
+- isolates all product logic inside Speedboats
+- avoids backend-to-backend dependencies
+- works perfectly for Mobile + Web with zero backend changes
+
+
+# 6 Testing Your Speedboat Locally
 
 Start the entire backend stack with docker.
 Services run on:
@@ -104,17 +146,17 @@ Services run on:
 
 To inspect your widget:
 ```bash
-curl http://localhost:8002/widgets
-curl http://localhost:8002/widgets/travel_top_destinations
+curl http://localhost:8002/widgetlist/
+curl http://localhost:8002/widgetlist/travel_top_destinations
 ```
 
 To test the final orchestration (if added to user 1 / alice):
 ```bash
-curl http://localhost:8000/widgets?user_id=1
+curl http://localhost:8000/widgetlist/?user_id=1
 ```
 
 
-# 6 Summary
+# 7 Summary
 
 This guideline enables product teams to build flexible, autonomous widgets with minimal friction:
 
@@ -126,3 +168,5 @@ This guideline enables product teams to build flexible, autonomous widgets with 
 - Let Web and Android App render your widgets automatically
 
 Product teams can innovate independently while the Core provides the minimal stable contract required for safety and performance.
+The Orchestrator does not return widget data but only the widget configuration and URLs.
+All Speedboat data is fetched directly by Web and Mobile clients.
