@@ -5,7 +5,7 @@
 - [CONCEPT.md](./CONCEPT.md) (englisch)
 - [DEVELOPER_GUIDELINE.md](./DEVELOPER_GUIDELINE.md) (englisch)
 - [Proof of Concept – Live Deployment](https://www.check24-challenge-gerards.vercel.app/)
-- [Application Video](https://your-video-link)
+- [Application Video](https://youtu.be/nTjMqNDrC8c) (deutsch)
 
 ## Einleitung
 Vielen Dank, dass Sie meine Umsetzung für die **Check24 GenDev Scholarship** Challenge in Betracht ziehen.
@@ -19,6 +19,8 @@ In dieser README wird das Projekt vorgestellt und Installationshinweise bereitge
 Die beiden weiteren Dokumente (Concept, Developer_Guideline) habe ich auf Englisch verfasst, da ich mich in dieser Sprache gezielter (mit Fachbegriffen der Informatik) ausdrücken kann.
 
 ## Video 
+
+- [Application Video](https://youtu.be/nTjMqNDrC8c) (deutsch)
 
 ## Deployment
 Die Web-Version habe ich vollständig deployed, um öffentlichen Zugriff zu ermöglichen.
